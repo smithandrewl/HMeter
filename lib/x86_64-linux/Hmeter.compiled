@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="/usr/bin/fpc" Date="1448540913"/>
-  <Params Value=" -MObjFPC -Scghi -Cg -O1 -g -gl -l -vewnhibq -Fi/home/andrew/files/projects/HMeter/lib/x86_64-linux -Fl/opt/gnome/lib -Fu/home/andrew/.lazarus/lib/TAChartLazarusPkg/lib/x86_64-linux/gtk2 -Fu/home/andrew/.lazarus/lib/IDEIntf/units/x86_64-linux/gtk2 -Fu/home/andrew/.lazarus/lib/LazControls/lib/x86_64-linux/gtk2 -Fu/home/andrew/.lazarus/lib/units/x86_64-linux/gtk2 -Fu/usr/lib/lazarus/lcl/units/x86_64-linux -Fu/usr/lib/lazarus/components/lazutils/lib/x86_64-linux -Fu/usr/lib/lazarus/packager/units/x86_64-linux -Fu/home/andrew/files/projects/HMeter/ -FU/home/andrew/files/projects/HMeter/lib/x86_64-linux/ -dLCL -dLCLgtk2 Hmeter.lpr"/>
-</CONFIG>
