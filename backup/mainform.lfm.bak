@@ -1,12 +1,12 @@
-object Form1: TForm1
-  Left = 1080
+object FormMain: TFormMain
+  Left = 571
   Height = 505
-  Top = 192
+  Top = 204
   Width = 384
   AlphaBlend = True
   AlphaBlendValue = 225
   BorderStyle = bsNone
-  Caption = 'Form1'
+  Caption = 'HMeter'
   ClientHeight = 505
   ClientWidth = 384
   Color = clBlack
@@ -14,9 +14,9 @@ object Form1: TForm1
   OnMouseDown = FormMouseDown
   OnMouseMove = FormMouseMove
   OnMouseUp = FormMouseUp
-  PopupMenu = PopupMenu2
+  PopupMenu = AppPopupMenu
   LCLVersion = '1.4.4.0'
-  object Chart1: TChart
+  object Chart: TChart
     Left = 8
     Height = 128
     Top = 0
@@ -43,18 +43,18 @@ object Form1: TForm1
       'TAChart'
     )
     Color = 1447446
-    object Chart1LineSeries1: TLineSeries
+    object ChartLineSeries1: TLineSeries
       Title = 'Tx Speed'
       LinePen.Color = clRed
       Source = RandomChartSource1
     end
-    object Chart1LineSeries2: TLineSeries
+    object ChartLineSeries2: TLineSeries
       Title = 'Rx Speed'
       LinePen.Color = 65465
       Source = RandomChartSource2
     end
   end
-  object Label2: TLabel
+  object lblModemType: TLabel
     Left = 8
     Height = 23
     Top = 144
@@ -64,9 +64,8 @@ object Form1: TForm1
     Font.Height = -16
     ParentColor = False
     ParentFont = False
-    OnClick = Label2Click
   end
-  object Label3: TLabel
+  object lblUptime: TLabel
     Left = 8
     Height = 23
     Top = 168
@@ -76,9 +75,8 @@ object Form1: TForm1
     Font.Height = -16
     ParentColor = False
     ParentFont = False
-    OnClick = Label2Click
   end
-  object Label5: TLabel
+  object lblTurboPageState: TLabel
     Left = 8
     Height = 23
     Top = 192
@@ -88,9 +86,8 @@ object Form1: TForm1
     Font.Height = -16
     ParentColor = False
     ParentFont = False
-    OnClick = Label2Click
   end
-  object GroupBox1: TGroupBox
+  object grpDownloadLimit: TGroupBox
     Left = 8
     Height = 272
     Top = 224
@@ -102,7 +99,7 @@ object Form1: TForm1
     Font.Height = -19
     ParentFont = False
     TabOrder = 1
-    object Label6: TLabel
+    object lblThrottled: TLabel
       Left = 14
       Height = 23
       Top = 0
@@ -112,9 +109,8 @@ object Form1: TForm1
       Font.Height = -16
       ParentColor = False
       ParentFont = False
-      OnClick = Label6Click
     end
-    object Label8: TLabel
+    object lblTimeUntilRefill: TLabel
       Left = 14
       Height = 23
       Top = 24
@@ -125,7 +121,7 @@ object Form1: TForm1
       ParentColor = False
       ParentFont = False
     end
-    object Label9: TLabel
+    object lblMegabytesLeft: TLabel
       Left = 14
       Height = 23
       Top = 104
@@ -136,7 +132,7 @@ object Form1: TForm1
       ParentColor = False
       ParentFont = False
     end
-    object Label10: TLabel
+    object lblDailyLimit: TLabel
       Left = 14
       Height = 23
       Top = 48
@@ -147,7 +143,7 @@ object Form1: TForm1
       ParentColor = False
       ParentFont = False
     end
-    object Label11: TLabel
+    object lblRefillAmount: TLabel
       Left = 14
       Height = 23
       Top = 72
@@ -158,7 +154,7 @@ object Form1: TForm1
       ParentColor = False
       ParentFont = False
     end
-    object Image1: TImage
+    object StatusImage: TImage
       Left = 48
       Height = 111
       Top = 128
@@ -587,7 +583,7 @@ object Form1: TForm1
     Height = 56
     Top = 0
     Width = 104
-    Chart = Chart1
+    Chart = Chart
   end
   object RandomChartSource1: TRandomChartSource
     PointsNumber = 10
@@ -596,11 +592,11 @@ object Form1: TForm1
     XMin = 0
     YMax = 10
     YMin = 0
-    left = 168
-    top = 192
+    left = 272
+    top = 176
   end
-  object TrayIcon1: TTrayIcon
-    PopUpMenu = PopupMenu1
+  object SysTray: TTrayIcon
+    PopUpMenu = SysTrayPopupMenu
     Icon.Data = {
       501702000000010006000000000001002000E291000066000000808000000100
       20002808010048920000404000000100200028420000709A0100303000000100
@@ -4887,28 +4883,28 @@ object Form1: TForm1
       8001AC418001AC41C003AC41E007AC41F01FAC41
     }
     Visible = True
-    OnClick = TrayIcon1Click
-    left = 304
-    top = 136
+    OnClick = SysTrayClick
+    left = 336
+    top = 176
   end
-  object PopupMenu1: TPopupMenu
+  object SysTrayPopupMenu: TPopupMenu
     left = 272
     top = 136
-    object MenuItem2: TMenuItem
+    object SysTrayExitMenuItem: TMenuItem
       Caption = 'Exit'
-      OnClick = MenuItem2Click
+      OnClick = SysTrayExitMenuItemClick
     end
   end
-  object PopupMenu2: TPopupMenu
-    left = 169
-    top = 150
-    object MenuItem1: TMenuItem
+  object AppPopupMenu: TPopupMenu
+    left = 312
+    top = 136
+    object AppHideMenuItem: TMenuItem
       Caption = '&Hide'
-      OnClick = MenuItem1Click
+      OnClick = AppHideMenuItemClick
     end
-    object MenuItem3: TMenuItem
+    object AppExitMenuItem: TMenuItem
       Caption = '&Exit'
-      OnClick = MenuItem3Click
+      OnClick = AppExitMenuItemClick
     end
   end
   object RandomChartSource2: TRandomChartSource
@@ -4918,7 +4914,11 @@ object Form1: TForm1
     XMin = 0
     YMax = 10
     YMin = 0
-    left = 208
-    top = 200
+    left = 304
+    top = 176
+  end
+  object RefreshTimer: TTimer
+    left = 232
+    top = 208
   end
 end

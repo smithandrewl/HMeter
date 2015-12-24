@@ -28,66 +28,65 @@ interface
 uses
   Classes, SysUtils, FileUtil, TAChartImageList, TASources, TAGraph, TASeries,
   TAStyles, TALegendPanel, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  StdCtrls, Menus;
+  StdCtrls, Menus, IniPropStorage;
 
 type
 
-  { TForm1 }
+  { TFormMain }
 
-  TForm1 = class(TForm)
-    Chart1: TChart;
-    Chart1LineSeries1: TLineSeries;
-    Chart1LineSeries2: TLineSeries;
+  TFormMain = class(TForm)
+    Chart: TChart;
+    ChartLineSeries1: TLineSeries;
+    ChartLineSeries2: TLineSeries;
     ChartLegendPanel1: TChartLegendPanel;
-    GroupBox1: TGroupBox;
-    Image1: TImage;
-    Label10: TLabel;
-    Label11: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
-    Label8: TLabel;
-    Label9: TLabel;
-    MenuItem1: TMenuItem;
-    MenuItem2: TMenuItem;
-    MenuItem3: TMenuItem;
-    PopupMenu1: TPopupMenu;
-    PopupMenu2: TPopupMenu;
+    grpDownloadLimit: TGroupBox;
+    StatusImage: TImage;
+    lblDailyLimit: TLabel;
+    lblRefillAmount: TLabel;
+    lblModemType: TLabel;
+    lblUptime: TLabel;
+    lblTurboPageState: TLabel;
+    lblThrottled: TLabel;
+    lblTimeUntilRefill: TLabel;
+    lblMegabytesLeft: TLabel;
+    AppHideMenuItem: TMenuItem;
+    SysTrayExitMenuItem: TMenuItem;
+    AppExitMenuItem: TMenuItem;
+    SysTrayPopupMenu: TPopupMenu;
+    AppPopupMenu: TPopupMenu;
     RandomChartSource1: TRandomChartSource;
     RandomChartSource2: TRandomChartSource;
-    TrayIcon1: TTrayIcon;
+    RefreshTimer: TTimer;
+    SysTray: TTrayIcon;
     procedure FormMouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Integer);
-    procedure FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
+      Shift: TShiftState; X, Y: integer);
+    procedure FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
     procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Integer);
-    procedure Label2Click(Sender: TObject);
-    procedure Label6Click(Sender: TObject);
-    procedure MenuItem1Click(Sender: TObject);
-    procedure MenuItem2Click(Sender: TObject);
-    procedure MenuItem3Click(Sender: TObject);
-    procedure TrayIcon1Click(Sender: TObject);
+      Shift: TShiftState; X, Y: integer);
+    procedure AppHideMenuItemClick(Sender: TObject);
+    procedure SysTrayExitMenuItemClick(Sender: TObject);
+    procedure AppExitMenuItemClick(Sender: TObject);
+    procedure SysTrayClick(Sender: TObject);
   private
     { private declarations }
-    IsMouseDown : boolean;
-    CursorStartX, CursorStartY : integer;
+    IsMouseDown: boolean;
+    CursorStartX, CursorStartY: integer;
 
   public
     { public declarations }
   end;
 
 var
-  Form1: TForm1;
+  FormMain: TFormMain;
 
 implementation
 
 {$R *.lfm}
 
-{ TForm1 }
+{ TFormMain }
 
-procedure TForm1.FormMouseDown(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Integer);
+procedure TFormMain.FormMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: integer);
 begin
   if Button = mbLeft then
   begin
@@ -97,8 +96,7 @@ begin
   end;
 end;
 
-procedure TForm1.FormMouseMove(Sender: TObject; Shift: TShiftState; X,
-  Y: Integer);
+procedure TFormMain.FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
 begin
   if IsMouseDown then
   begin
@@ -107,43 +105,34 @@ begin
   end;
 end;
 
-procedure TForm1.FormMouseUp(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Integer);
+procedure TFormMain.FormMouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: integer);
 begin
 
-IsMouseDown := False;
+  IsMouseDown := False;
 end;
 
-procedure TForm1.Label2Click(Sender: TObject);
+procedure TFormMain.AppHideMenuItemClick(Sender: TObject);
 begin
-
+  Visible := False;
 end;
 
-procedure TForm1.Label6Click(Sender: TObject);
-begin
-
-end;
-
-procedure TForm1.MenuItem1Click(Sender: TObject);
-begin
-  Visible:= false;
-end;
-
-procedure TForm1.MenuItem2Click(Sender: TObject);
-begin
-    application.Terminate();
-end;
-
-procedure TForm1.MenuItem3Click(Sender: TObject);
+procedure TFormMain.SysTrayExitMenuItemClick(Sender: TObject);
 begin
   application.Terminate();
 end;
 
-procedure TForm1.TrayIcon1Click(Sender: TObject);
+procedure TFormMain.AppExitMenuItemClick(Sender: TObject);
+begin
+  application.Terminate();
+end;
+
+procedure TFormMain.SysTrayClick(Sender: TObject);
 begin
   Visible := not Visible;
-  IsMouseDown := false;
+  IsMouseDown := False;
 end;
 
 end.
+
 
