@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 571
+  Left = 819
   Height = 505
-  Top = 204
+  Top = 228
   Width = 384
   AlphaBlend = True
   AlphaBlendValue = 225
@@ -4919,6 +4919,6 @@ object FormMain: TFormMain
   end
   object RefreshTimer: TTimer
     left = 232
-    top = 208
+    top = 136
   end
 end

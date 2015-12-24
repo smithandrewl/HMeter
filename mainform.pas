@@ -27,8 +27,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, TAChartImageList, TASources, TAGraph, TASeries,
-  TAStyles, TALegendPanel, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  StdCtrls, Menus, IniPropStorage;
+  TAStyles, TALegendPanel, RTTICtrls, Forms, Controls, Graphics, Dialogs,
+  ExtCtrls, StdCtrls, Menus, IniPropStorage, HNetInfo;
 
 type
 
@@ -58,6 +58,8 @@ type
     RandomChartSource2: TRandomChartSource;
     RefreshTimer: TTimer;
     SysTray: TTrayIcon;
+
+
     procedure FormMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: integer);
     procedure FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
@@ -71,9 +73,10 @@ type
     { private declarations }
     IsMouseDown: boolean;
     CursorStartX, CursorStartY: integer;
-
+    Info: THNetInfo;
   public
     { public declarations }
+
   end;
 
 var

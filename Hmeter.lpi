@@ -27,15 +27,24 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="2">
+    <RequiredPackages Count="5">
       <Item1>
-        <PackageName Value="TAChartLazarusPkg"/>
+        <PackageName Value="RunTimeTypeInfoControls"/>
       </Item1>
       <Item2>
-        <PackageName Value="LCL"/>
+        <PackageName Value="SQLDBLaz"/>
       </Item2>
+      <Item3>
+        <PackageName Value="TurboPowerIPro"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="TAChartLazarusPkg"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="LCL"/>
+      </Item5>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="Hmeter.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -48,6 +57,11 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainForm"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="hnetinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="HNetInfo"/>
+      </Unit2>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
