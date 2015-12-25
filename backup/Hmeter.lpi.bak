@@ -74,6 +74,9 @@
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
+      <Debugging>
+        <UseValgrind Value="True"/>
+      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>

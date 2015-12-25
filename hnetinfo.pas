@@ -51,6 +51,8 @@ type
   end;
 
 
+function FetchHNetInfo: THNetInfo;
+
 implementation
 
 constructor THNetInfo.Create;
@@ -143,5 +145,21 @@ begin
   FMegabytesLeft := MegabytesLeft;
 end;
 
+function FetchHNetInfo: THNetInfo;
+var
+  Info: THNetInfo;
+begin
+
+  Info.ModemType       := 'ModemType';
+  Info.Uptime          := 'Uptime';
+  Info.TurboPageState  := 'TurboPageState';
+  Info.Throttled       := 'Throttled';
+  Info.TimeUntilRefill := 'TimeUntilRefill';
+  Info.DailyLimit      := 'DailyLimit';
+  Info.RefillAmount    := 'RefillAmount';
+  Info.MegabytesLeft   := 'MegabytesLeft';
+
+  result := Info;
+end;
 
 end.

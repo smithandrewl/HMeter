@@ -9,7 +9,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="72" Y="10"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="37"/>
       </Unit0>
       <Unit1>
         <Filename Value="mainform.pas"/>
@@ -18,9 +18,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainForm"/>
-        <TopLine Value="34"/>
-        <CursorPos X="20" Y="3"/>
-        <UsageCount Value="32"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="148"/>
+        <CursorPos X="6" Y="168"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -28,11 +29,10 @@
         <Filename Value="hnetinfo.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HNetInfo"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="4"/>
-        <CursorPos X="24" Y="13"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="132"/>
+        <CursorPos Y="152"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -41,7 +41,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="1080"/>
         <CursorPos X="3" Y="1095"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -56,121 +56,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="mainform.pas"/>
+        <Caret Line="135" TopLine="114"/>
       </Position1>
       <Position2>
         <Filename Value="mainform.pas"/>
-        <Caret Line="112" Column="24" TopLine="107"/>
+        <Caret Line="140" Column="25" TopLine="129"/>
       </Position2>
       <Position3>
-        <Filename Value="hnetinfo.pas"/>
-        <Caret Line="8"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="76" Column="41" TopLine="54"/>
       </Position3>
       <Position4>
         <Filename Value="hnetinfo.pas"/>
-        <Caret Line="13"/>
+        <Caret Line="53" Column="25" TopLine="34"/>
       </Position4>
       <Position5>
         <Filename Value="hnetinfo.pas"/>
-        <Caret Line="7" Column="10"/>
+        <Caret Line="153" Column="32" TopLine="133"/>
       </Position5>
       <Position6>
         <Filename Value="hnetinfo.pas"/>
-        <Caret Line="20" Column="21"/>
+        <Caret Line="149" Column="26" TopLine="133"/>
       </Position6>
       <Position7>
         <Filename Value="hnetinfo.pas"/>
-        <Caret Line="10"/>
+        <Caret Line="55" Column="27" TopLine="38"/>
       </Position7>
       <Position8>
         <Filename Value="hnetinfo.pas"/>
-        <Caret Line="8" Column="5"/>
+        <Caret Line="154" Column="7" TopLine="133"/>
       </Position8>
       <Position9>
         <Filename Value="hnetinfo.pas"/>
-        <Caret Line="36" TopLine="6"/>
+        <Caret Line="153" Column="3" TopLine="133"/>
       </Position9>
       <Position10>
         <Filename Value="hnetinfo.pas"/>
-        <Caret Line="32" Column="29" TopLine="7"/>
+        <Caret Line="55" Column="25" TopLine="36"/>
       </Position10>
       <Position11>
         <Filename Value="hnetinfo.pas"/>
-        <Caret Line="27" Column="57" TopLine="9"/>
+        <Caret Line="53" Column="26" TopLine="38"/>
       </Position11>
       <Position12>
         <Filename Value="hnetinfo.pas"/>
-        <Caret Line="61" Column="3" TopLine="43"/>
+        <Caret Line="54" Column="26" TopLine="37"/>
       </Position12>
       <Position13>
         <Filename Value="hnetinfo.pas"/>
-        <Caret Line="81" TopLine="51"/>
+        <Caret Line="148" Column="26" TopLine="131"/>
       </Position13>
       <Position14>
         <Filename Value="hnetinfo.pas"/>
-        <Caret Line="62" Column="5" TopLine="39"/>
+        <Caret Line="150" Column="10" TopLine="132"/>
       </Position14>
       <Position15>
-        <Filename Value="hnetinfo.pas"/>
-        <Caret Line="81" TopLine="51"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="140" Column="17" TopLine="113"/>
       </Position15>
       <Position16>
-        <Filename Value="hnetinfo.pas"/>
-        <Caret Line="127" TopLine="96"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="125" Column="10" TopLine="108"/>
       </Position16>
       <Position17>
-        <Filename Value="hnetinfo.pas"/>
-        <Caret Line="10"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="138" TopLine="117"/>
       </Position17>
       <Position18>
-        <Filename Value="hnetinfo.pas"/>
-        <Caret Line="65" TopLine="52"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="139" TopLine="118"/>
       </Position18>
       <Position19>
-        <Filename Value="hnetinfo.pas"/>
-        <Caret Line="2"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="140" TopLine="119"/>
       </Position19>
       <Position20>
         <Filename Value="mainform.pas"/>
-        <Caret Line="102" TopLine="71"/>
+        <Caret Line="141" TopLine="120"/>
       </Position20>
       <Position21>
         <Filename Value="mainform.pas"/>
-        <Caret Line="75" Column="20" TopLine="58"/>
+        <Caret Line="142" TopLine="121"/>
       </Position21>
       <Position22>
         <Filename Value="mainform.pas"/>
-        <Caret Line="63" TopLine="13"/>
+        <Caret Line="141" TopLine="120"/>
       </Position22>
       <Position23>
         <Filename Value="mainform.pas"/>
-        <Caret Line="62" TopLine="31"/>
+        <Caret Line="142" TopLine="121"/>
       </Position23>
       <Position24>
-        <Filename Value="hnetinfo.pas"/>
-        <Caret Line="10" Column="30" TopLine="4"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="143" TopLine="122"/>
       </Position24>
       <Position25>
-        <Filename Value="/usr/lib/lazarus/lcl/extctrls.pp"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="142" TopLine="121"/>
       </Position25>
       <Position26>
-        <Filename Value="/usr/lib/lazarus/lcl/extctrls.pp"/>
-        <Caret Line="1167" Column="3" TopLine="1151"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="143" TopLine="122"/>
       </Position26>
       <Position27>
-        <Filename Value="/usr/lib/lazarus/lcl/extctrls.pp"/>
-        <Caret Line="1095" Column="3" TopLine="1080"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="144" TopLine="123"/>
       </Position27>
       <Position28>
-        <Filename Value="hnetinfo.pas"/>
-        <Caret Line="10" Column="23"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="170" Column="35" TopLine="145"/>
       </Position28>
       <Position29>
         <Filename Value="mainform.pas"/>
-        <Caret Line="61" Column="9" TopLine="35"/>
+        <Caret Line="178" Column="5" TopLine="147"/>
       </Position29>
       <Position30>
         <Filename Value="mainform.pas"/>
-        <Caret Line="44" Column="27" TopLine="5"/>
+        <Caret Line="148" Column="18" TopLine="125"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

@@ -3,52 +3,55 @@ unit HNetInfo;
 {$mode objfpc}{$F+}
 
 interface
+
 uses
   Classes, SysUtils;
 
 type
-THNetInfo = class(TObject)
-private
-  FModemType: String;
-  FUptime: String;
-  FTurboPageState: String;
-  FThrottled: String;
-  FTimeUntilRefill: String;
-  FDailyLimit: String;
-  FRefillAmount: String;
-  FMegabytesLeft: String;
+  THNetInfo = class(TObject)
+  private
+    FModemType: string;
+    FUptime: string;
+    FTurboPageState: string;
+    FThrottled: string;
+    FTimeUntilRefill: string;
+    FDailyLimit: string;
+    FRefillAmount: string;
+    FMegabytesLeft: string;
 
-  function GetModemType: String;
-  procedure SetModemType(const ModemType: String);
-  function GetUptime: String;
-  procedure SetUptime(const Uptime: String);
-  function GetTurboPageState: String;
-  procedure SetTurboPageState(const TurboPageState: String);
-  function GetThrottled: String;
-  procedure SetThrottled(const Throttled: String);
-  function GetTimeUntilRefill: String;
-  procedure SetTimeUntilRefill(const TimeUntilRefill: String);
-  function GetDailyLimit: String;
-  procedure SetDailyLimit(const DailyLimit: String);
-  function GetRefillAmount: String;
-  procedure SetRefillAmount(const RefillAmount: String);
-  function GetMegabytesLeft: String;
-  procedure SetMegabytesLeft(const MegabytesLeft: String);
+    function GetModemType: string;
+    procedure SetModemType(const ModemType: string);
+    function GetUptime: string;
+    procedure SetUptime(const Uptime: string);
+    function GetTurboPageState: string;
+    procedure SetTurboPageState(const TurboPageState: string);
+    function GetThrottled: string;
+    procedure SetThrottled(const Throttled: string);
+    function GetTimeUntilRefill: string;
+    procedure SetTimeUntilRefill(const TimeUntilRefill: string);
+    function GetDailyLimit: string;
+    procedure SetDailyLimit(const DailyLimit: string);
+    function GetRefillAmount: string;
+    procedure SetRefillAmount(const RefillAmount: string);
+    function GetMegabytesLeft: string;
+    procedure SetMegabytesLeft(const MegabytesLeft: string);
 
-public
-  constructor Create;
-  destructor Destroy; override;
-published
-  property ModemType: String read GetModemType write SetModemType;
-  property Uptime: String read GetUptime write SetUptime;
-  property TurboPageState: String read GetTurboPageState write SetTurboPageState;
-  property Throttled: String read GetThrottled write SetThrottled;
-  property TimeUntilRefill: String read GetTimeUntilRefill write SetTimeUntilRefill;
-  property DailyLimit: String read GetDailyLimit write SetDailyLimit;
-  property RefillAmount: String read GetRefillAmount write SetRefillAmount;
-  property MegabytesLeft: String read GetMegabytesLeft write SetMegabytesLeft;
-end;
+  public
+    constructor Create;
+    destructor Destroy; override;
+  published
+    property ModemType: string read GetModemType write SetModemType;
+    property Uptime: string read GetUptime write SetUptime;
+    property TurboPageState: string read GetTurboPageState write SetTurboPageState;
+    property Throttled: string read GetThrottled write SetThrottled;
+    property TimeUntilRefill: string read GetTimeUntilRefill write SetTimeUntilRefill;
+    property DailyLimit: string read GetDailyLimit write SetDailyLimit;
+    property RefillAmount: string read GetRefillAmount write SetRefillAmount;
+    property MegabytesLeft: string read GetMegabytesLeft write SetMegabytesLeft;
+  end;
 
+
+function FetchHNetInfo: THNetInfo;
 
 implementation
 
@@ -62,72 +65,101 @@ begin
 
 end;
 
-function THNetInfo.GetModemType: String;
+function THNetInfo.GetModemType: string;
 begin
-     result := FModemType;
+  Result := FModemType;
 end;
 
-procedure THNetInfo.SetModemType(const ModemType: String);
+procedure THNetInfo.SetModemType(const ModemType: string);
 begin
-     FModemType := ModemType;
+  FModemType := ModemType;
 end;
-function THNetInfo.GetUptime: String;
+
+function THNetInfo.GetUptime: string;
 begin
-     result := FUptime;
+  Result := FUptime;
 end;
-procedure THNetInfo.SetUptime(const Uptime: String);
+
+procedure THNetInfo.SetUptime(const Uptime: string);
 begin
-     FUptime := Uptime;
+  FUptime := Uptime;
 end;
-function THNetInfo.GetTurboPageState: String;
+
+function THNetInfo.GetTurboPageState: string;
 begin
-     result := FTurboPageState;
+  Result := FTurboPageState;
 end;
-procedure THNetInfo.SetTurboPageState(const TurboPageState: String);
+
+procedure THNetInfo.SetTurboPageState(const TurboPageState: string);
 begin
-     FTurboPageState := TurboPageState;
+  FTurboPageState := TurboPageState;
 end;
-function THNetInfo.GetThrottled: String;
+
+function THNetInfo.GetThrottled: string;
 begin
-  result := FThrottled;
+  Result := FThrottled;
 end;
-procedure THNetInfo.SetThrottled(const Throttled: String);
+
+procedure THNetInfo.SetThrottled(const Throttled: string);
 begin
   FThrottled := Throttled;
 end;
-function THNetInfo.GetTimeUntilRefill: String;
+
+function THNetInfo.GetTimeUntilRefill: string;
 begin
-  result := FTimeUntilRefill;
+  Result := FTimeUntilRefill;
 end;
-procedure THNetInfo.SetTimeUntilRefill(const TimeUntilRefill: String);
+
+procedure THNetInfo.SetTimeUntilRefill(const TimeUntilRefill: string);
 begin
   FTimeUntilRefill := TimeUntilRefill;
 end;
-function THNetInfo.GetDailyLimit: String;
+
+function THNetInfo.GetDailyLimit: string;
 begin
-  result := FDailyLimit;
+  Result := FDailyLimit;
 end;
-procedure THNetInfo.SetDailyLimit(const DailyLimit: String);
+
+procedure THNetInfo.SetDailyLimit(const DailyLimit: string);
 begin
   FDailyLimit := DailyLimit;
 end;
-function THNetInfo.GetRefillAmount: String;
+
+function THNetInfo.GetRefillAmount: string;
 begin
-  result := FRefillAmount;
+  Result := FRefillAmount;
 end;
-procedure THNetInfo.SetRefillAmount(const RefillAmount: String);
+
+procedure THNetInfo.SetRefillAmount(const RefillAmount: string);
 begin
   FRefillAmount := RefillAmount;
 end;
-function THNetInfo.GetMegabytesLeft: String;
+
+function THNetInfo.GetMegabytesLeft: string;
 begin
-  result := FMegabytesLeft;
+  Result := FMegabytesLeft;
 end;
-procedure THNetInfo.SetMegabytesLeft(const MegabytesLeft: String);
+
+procedure THNetInfo.SetMegabytesLeft(const MegabytesLeft: string);
 begin
   FMegabytesLeft := MegabytesLeft;
 end;
 
+function FetchHNetInfo: THNetInfo;
+var
+  Info: THNetInfo;
+begin
+
+  Info.ModemType       := 'ModemType';
+  Info^.Uptime          := 'Uptime';
+  Info^.TurboPageState  := 'TurboPageState';
+  Info^.Throttled       := 'Throttled';
+  Info^.TimeUntilRefill := 'TimeUntilRefill';
+  Info^.DailyLimit      := 'DailyLimit';
+  Info^.RefillAmount    := 'RefillAmount';
+  Info^.MegabytesLeft   := 'MegabytesLeft';
+
+  result := Info;
+end;
 
 end.
-

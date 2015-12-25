@@ -40,8 +40,15 @@ type
     ChartLineSeries2: TLineSeries;
     ChartLegendPanel1: TChartLegendPanel;
     grpDownloadLimit: TGroupBox;
+    lblModemTypeValue: TLabel;
+    lblUptimeValue: TLabel;
+    lblTurboPageStateValue: TLabel;
+    lblThrottledValue: TLabel;
+    lblTimeUntilRefillValue: TLabel;
+    lblRefillAmountValue: TLabel;
+    lblMegabytesLeftValue: TLabel;
     StatusImage: TImage;
-    lblDailyLimit: TLabel;
+    lblDailyLimitValue: TLabel;
     lblRefillAmount: TLabel;
     lblModemType: TLabel;
     lblUptime: TLabel;
@@ -58,7 +65,7 @@ type
     RandomChartSource2: TRandomChartSource;
     RefreshTimer: TTimer;
     SysTray: TTrayIcon;
-        Info: THNetInfo;
+
 
     procedure FormMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: integer);
@@ -66,6 +73,7 @@ type
     procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: integer);
     procedure AppHideMenuItemClick(Sender: TObject);
+    procedure RefreshTimerTimer(Sender: TObject);
     procedure SysTrayExitMenuItemClick(Sender: TObject);
     procedure AppExitMenuItemClick(Sender: TObject);
     procedure SysTrayClick(Sender: TObject);
@@ -73,9 +81,10 @@ type
     { private declarations }
     IsMouseDown: boolean;
     CursorStartX, CursorStartY: integer;
-
+    procedure UpdateUI(Info: THNetInfo);
   public
     { public declarations }
+
   end;
 
 var
@@ -119,6 +128,26 @@ begin
   Visible := False;
 end;
 
+procedure TFormMain.RefreshTimerTimer(Sender: TObject);
+var
+  Info: THNetInfo;
+begin
+     (*
+
+       Call function to return  a THNetInfo from the web URL:
+         connect to the web url
+         initialize a component to handle INI
+
+         feed the component the stream
+         get the values needed and populate an instance of THNetInfo
+
+       Update the user interface using the THNetInfo instance
+     *)
+
+  Info := FetchHNetInfo();
+  UpdateUI(Info);
+end;
+
 procedure TFormMain.SysTrayExitMenuItemClick(Sender: TObject);
 begin
   application.Terminate();
@@ -133,6 +162,18 @@ procedure TFormMain.SysTrayClick(Sender: TObject);
 begin
   Visible := not Visible;
   IsMouseDown := False;
+end;
+
+procedure TFormMain.UpdateUI(Info: THNetInfo);
+begin
+  lblModemTypeValue.Caption       := Info.ModemType;
+  lblUptimeValue.Caption          := Info.Uptime;
+  lblTurboPageStateValue.Caption  := Info.TurboPageState;
+  lblThrottledValue.Caption       := Info.Throttled;
+  lblTimeUntilRefillValue.Caption := Info.TimeUntilRefill;
+  lblDailyLimitValue.Caption      := Info.DailyLimit;
+  lblRefillAmountValue.Caption    := Info.RefillAmount;
+  lblMegabytesLeftValue.Caption   := Info.MegabytesLeft;
 end;
 
 end.
