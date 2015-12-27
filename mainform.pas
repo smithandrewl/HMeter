@@ -27,53 +27,67 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, TAChartImageList, TASources, TAGraph, TASeries,
-  TAStyles, TALegendPanel, RTTICtrls, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, StdCtrls, Menus, IniPropStorage, HNetInfo;
+  TAStyles, TALegendPanel, RTTICtrls, LvlGraphCtrl, Forms, Controls, Graphics,
+  Dialogs, ExtCtrls, StdCtrls, Menus, IniPropStorage, LResources, HNetInfo;
 
 type
 
   { TFormMain }
 
   TFormMain = class(TForm)
-    Chart: TChart;
-    ChartLineSeries1: TLineSeries;
-    ChartLineSeries2: TLineSeries;
-    ChartLegendPanel1: TChartLegendPanel;
-    grpDownloadLimit: TGroupBox;
-    lblModemTypeValue: TLabel;
-    lblUptimeValue: TLabel;
-    lblTurboPageStateValue: TLabel;
-    lblThrottledValue: TLabel;
+    Chart:                   TChart;
+    ChartLineSeries1:        TLineSeries;
+    ChartLineSeries2:        TLineSeries;
+    ChartLegendPanel1:       TChartLegendPanel;
+    grpDownloadLimit:        TGroupBox;
+    IdleTimer1:              TIdleTimer;
+    lblDailyLimitValue:      TLabel;
+    lblMegabytesLeft:        TLabel;
+    lblMegabytesLeftValue:   TLabel;
+    lblModemTypeValue:       TLabel;
+    lblRefillAmount:         TLabel;
+    lblRefillAmountValue:    TLabel;
+    lblThrottled:            TLabel;
+    lblThrottledValue:       TLabel;
+    lblTimeUntilRefill:      TLabel;
     lblTimeUntilRefillValue: TLabel;
-    lblRefillAmountValue: TLabel;
-    lblMegabytesLeftValue: TLabel;
-    StatusImage: TImage;
-    lblDailyLimitValue: TLabel;
-    lblRefillAmount: TLabel;
-    lblModemType: TLabel;
-    lblUptime: TLabel;
-    lblTurboPageState: TLabel;
-    lblThrottled: TLabel;
-    lblTimeUntilRefill: TLabel;
-    lblMegabytesLeft: TLabel;
-    AppHideMenuItem: TMenuItem;
-    SysTrayExitMenuItem: TMenuItem;
-    AppExitMenuItem: TMenuItem;
-    SysTrayPopupMenu: TPopupMenu;
-    AppPopupMenu: TPopupMenu;
-    RandomChartSource1: TRandomChartSource;
-    RandomChartSource2: TRandomChartSource;
-    RefreshTimer: TTimer;
-    SysTray: TTrayIcon;
+    lblUptimeValue:          TLabel;
+    lblTurboPageStateValue:  TLabel;
+    lblModemType:            TLabel;
+    lblUptime:               TLabel;
+    lblTurboPageState:       TLabel;
+    AppHideMenuItem:         TMenuItem;
+    StatusImage:             TImage;
+    SysTrayExitMenuItem:     TMenuItem;
+    AppExitMenuItem:         TMenuItem;
+    SysTrayPopupMenu:        TPopupMenu;
+    AppPopupMenu:            TPopupMenu;
+    RandomChartSource1:      TRandomChartSource;
+    RandomChartSource2:      TRandomChartSource;
+    RefreshTimer:            TTimer;
+    SysTray:                 TTrayIcon;
 
 
-    procedure FormMouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: integer);
+    procedure FormMouseDown(
+      Sender: TObject;
+      Button: TMouseButton;
+      Shift:  TShiftState;
+      X:      integer;
+      Y:      integer
+    );
+
     procedure FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
-    procedure FormMouseUp(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: integer);
+
+    procedure FormMouseUp(
+      Sender: TObject;
+      Button: TMouseButton;
+      Shift:  TShiftState;
+      X:      integer;
+      Y:      integer
+    );
+
     procedure AppHideMenuItemClick(Sender: TObject);
-    procedure RefreshTimerTimer(Sender: TObject);
+    procedure IdleTimer1Timer(Sender: TObject);
     procedure SysTrayExitMenuItemClick(Sender: TObject);
     procedure AppExitMenuItemClick(Sender: TObject);
     procedure SysTrayClick(Sender: TObject);
@@ -101,18 +115,20 @@ procedure TFormMain.FormMouseDown(Sender: TObject; Button: TMouseButton;
 begin
   if Button = mbLeft then
   begin
-    IsMouseDown := True;
+    IsMouseDown  := True;
     CursorStartX := x;
     CursorStartY := y;
   end;
 end;
+
+
 
 procedure TFormMain.FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
 begin
   if IsMouseDown then
   begin
     Left := Left - CursorStartX + X;
-    Top := Top - CursorStartY + y;
+    Top  := Top  - CursorStartY + y;
   end;
 end;
 
@@ -128,24 +144,14 @@ begin
   Visible := False;
 end;
 
-procedure TFormMain.RefreshTimerTimer(Sender: TObject);
-var
-  Info: THNetInfo;
-begin
-     (*
+procedure TFormMain.IdleTimer1Timer(Sender: TObject);
+  var
+    Info: THNetInfo;
+  begin
+    IdleTimer1.enabled := false;
+    Info               := FetchHNetInfo();
 
-       Call function to return  a THNetInfo from the web URL:
-         connect to the web url
-         initialize a component to handle INI
-
-         feed the component the stream
-         get the values needed and populate an instance of THNetInfo
-
-       Update the user interface using the THNetInfo instance
-     *)
-
-  Info := FetchHNetInfo();
-  UpdateUI(Info);
+    UpdateUI(Info);
 end;
 
 procedure TFormMain.SysTrayExitMenuItemClick(Sender: TObject);
@@ -160,7 +166,7 @@ end;
 
 procedure TFormMain.SysTrayClick(Sender: TObject);
 begin
-  Visible := not Visible;
+  Visible     := not Visible;
   IsMouseDown := False;
 end;
 

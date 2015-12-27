@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 670
+  Left = 922
   Height = 505
-  Top = 244
+  Top = 206
   Width = 384
   AlphaBlend = True
   AlphaBlendValue = 225
@@ -87,6 +87,49 @@ object FormMain: TFormMain
     ParentColor = False
     ParentFont = False
   end
+  object ChartLegendPanel1: TChartLegendPanel
+    Left = 272
+    Height = 56
+    Top = 0
+    Width = 104
+    Chart = Chart
+  end
+  object lblModemTypeValue: TLabel
+    Left = 160
+    Height = 1
+    Top = 144
+    Width = 1
+    Color = clMenuBar
+    Font.Color = 18175
+    Font.Height = -16
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object lblUptimeValue: TLabel
+    Left = 160
+    Height = 1
+    Top = 172
+    Width = 1
+    Color = clMenuBar
+    Font.Color = 18175
+    Font.Height = -16
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object lblTurboPageStateValue: TLabel
+    Left = 160
+    Height = 1
+    Top = 200
+    Width = 1
+    Color = clMenuBar
+    Font.Color = 18175
+    Font.Height = -16
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
   object grpDownloadLimit: TGroupBox
     Left = 8
     Height = 272
@@ -98,7 +141,7 @@ object FormMain: TFormMain
     Font.Color = 18175
     Font.Height = -19
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 2
     object lblThrottled: TLabel
       Left = 14
       Height = 23
@@ -155,7 +198,7 @@ object FormMain: TFormMain
       ParentFont = False
     end
     object StatusImage: TImage
-      Left = 48
+      Left = 56
       Height = 111
       Top = 128
       Width = 259
@@ -625,49 +668,6 @@ object FormMain: TFormMain
       ParentFont = False
       Transparent = False
     end
-  end
-  object ChartLegendPanel1: TChartLegendPanel
-    Left = 272
-    Height = 56
-    Top = 0
-    Width = 104
-    Chart = Chart
-  end
-  object lblModemTypeValue: TLabel
-    Left = 160
-    Height = 1
-    Top = 144
-    Width = 1
-    Color = clMenuBar
-    Font.Color = 18175
-    Font.Height = -16
-    ParentColor = False
-    ParentFont = False
-    Transparent = False
-  end
-  object lblUptimeValue: TLabel
-    Left = 160
-    Height = 1
-    Top = 172
-    Width = 1
-    Color = clMenuBar
-    Font.Color = 18175
-    Font.Height = -16
-    ParentColor = False
-    ParentFont = False
-    Transparent = False
-  end
-  object lblTurboPageStateValue: TLabel
-    Left = 160
-    Height = 1
-    Top = 200
-    Width = 1
-    Color = clMenuBar
-    Font.Color = 18175
-    Font.Height = -16
-    ParentColor = False
-    ParentFont = False
-    Transparent = False
   end
   object RandomChartSource1: TRandomChartSource
     PointsNumber = 10
@@ -5001,9 +5001,11 @@ object FormMain: TFormMain
     left = 304
     top = 176
   end
-  object RefreshTimer: TTimer
-    OnTimer = RefreshTimerTimer
-    left = 232
-    top = 136
+  object IdleTimer1: TIdleTimer
+    AutoEndEvent = itaOnIdleEnd
+    Interval = 500
+    OnTimer = IdleTimer1Timer
+    left = 306
+    top = 300
   end
 end
