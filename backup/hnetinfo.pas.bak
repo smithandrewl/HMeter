@@ -176,8 +176,6 @@ begin
     Data.Free;
   end;
 
-
-
   result := Info;
 
 //  Data := TIniFile.Create(DataStream);

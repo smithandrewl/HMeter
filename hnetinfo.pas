@@ -147,8 +147,8 @@ end;
 
 function FetchHNetInfo: THNetInfo;
 var
-  Info: THNetInfo;
-  Data: TIniFile;
+  Info:       THNetInfo;
+  Data:       TIniFile;
   DataStream: TMemoryStream;
 begin
 
@@ -162,13 +162,13 @@ begin
 
     Info := THNetInfo.Create;
 
-    Info.ModemType       := Data.ReadString('Data', 'STModel', '???');
-    Info.Uptime          := Data.ReadString('Data', 'Uptime', '???');
-    Info.TurboPageState  := Data.ReadString('Data', 'TurboPageState', '???');
-    Info.Throttled       :=  Data.ReadString('Blob', 'FapThrottleState', '???');
-    Info.TimeUntilRefill := Data.ReadString('Blob', 'FapTimeUntilRefill', '???');
-    Info.DailyLimit      :=  Data.ReadString('Blob', 'AnytimePlanAllowance', '???');
-    Info.RefillAmount    := Data.ReadString('Blob', 'RefillAmount', '???');
+    Info.ModemType       := Data.ReadString('Data', 'STModel',                   '???');
+    Info.Uptime          := Data.ReadString('Data', 'Uptime',                    '???');
+    Info.TurboPageState  := Data.ReadString('Data', 'TurboPageState',            '???');
+    Info.Throttled       := Data.ReadString('Blob', 'FapThrottleState',          '???');
+    Info.TimeUntilRefill := Data.ReadString('Blob', 'FapTimeUntilRefill',        '???');
+    Info.DailyLimit      := Data.ReadString('Blob', 'AnytimePlanAllowance',      '???');
+    Info.RefillAmount    := Data.ReadString('Blob', 'RefillAmount',              '???');
     Info.MegabytesLeft   := Data.ReadString('Blob', 'AnytimeAllowanceRemaining', '???');
 
   finally
@@ -177,8 +177,6 @@ begin
   end;
 
   result := Info;
-
-//  Data := TIniFile.Create(DataStream);
 end;
 
 end.
