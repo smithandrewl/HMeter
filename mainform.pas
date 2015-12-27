@@ -44,7 +44,9 @@ type
     lblUptime:               TLabel;
     lblTurboPageState:       TLabel;
     AppHideMenuItem:         TMenuItem;
-    StatusImage:             TImage;
+    StatusImageBarred:             TImage;
+    StatusImageHigh: TImage;
+    StatusImageLow: TImage;
     SysTrayExitMenuItem:     TMenuItem;
     AppExitMenuItem:         TMenuItem;
     SysTrayPopupMenu:        TPopupMenu;
@@ -186,6 +188,8 @@ procedure TFormMain.Refresh;
 end;
 
 procedure TFormMain.UpdateUI(Info: THNetInfo);
+var
+  DataLeft: integer;
 begin
   lblModemTypeValue.Caption             := Info.ModemType;
   lblUptimeValue.Caption                := Info.Uptime;
@@ -198,6 +202,28 @@ begin
   lblReceiveSignalStrengthValue.Caption := Info.ReceiveSignalStrength;
 
   ChartLineSeries1.add( StrToFloat(Info.ReceiveSignalStrength));
+
+  DataLeft := StrToInt(Info.MegabytesLeft);
+
+  if DataLeft > 300 then
+  begin
+    StatusImageBarred.Visible := false;
+    StatusImageLow.Visible    := false;
+    StatusImageHigh.Visible   := true;
+  end
+  else if DataLeft > 200 then
+  begin
+
+    StatusImageBarred.Visible := false;
+    StatusImageLow.Visible    := true;
+    StatusImageHigh.Visible   := false;
+  end
+  else
+  begin
+    StatusImageBarred.Visible := true;
+    StatusImageLow.Visible    := false;
+    StatusImageHigh.visible   := false;
+  end;
 end;
 
 end.
