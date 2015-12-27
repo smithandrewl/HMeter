@@ -10,23 +10,25 @@ uses
 type
   THNetInfo = class(TObject)
   private
-    FModemType:       string;
-    FUptime:          string;
-    FTurboPageState:  string;
-    FThrottled:       string;
-    FTimeUntilRefill: string;
-    FDailyLimit:      string;
-    FRefillAmount:    string;
-    FMegabytesLeft:   string;
+    FModemType:             string;
+    FUptime:                string;
+    FTurboPageState:        string;
+    FThrottled:             string;
+    FTimeUntilRefill:       string;
+    FDailyLimit:            string;
+    FRefillAmount:          string;
+    FMegabytesLeft:         string;
+    FReceiveSignalStrength: string;
 
-    function GetModemType:       string;
-    function GetUptime:          string;
-    function GetTurboPageState:  string;
-    function GetThrottled:       string;
-    function GetTimeUntilRefill: string;
-    function GetDailyLimit:      string;
-    function GetRefillAmount:    string;
-    function GetMegabytesLeft:   string;
+    function GetModemType:             string;
+    function GetUptime:                string;
+    function GetTurboPageState:        string;
+    function GetThrottled:             string;
+    function GetTimeUntilRefill:       string;
+    function GetDailyLimit:            string;
+    function GetRefillAmount:          string;
+    function GetMegabytesLeft:         string;
+    function GetReceiveSignalStrength: string;
 
     procedure SetUptime(const Uptime: string);
     procedure SetTurboPageState(const TurboPageState: string);
@@ -36,6 +38,7 @@ type
     procedure SetMegabytesLeft(const MegabytesLeft: string);
     procedure SetRefillAmount(const RefillAmount: string);
     procedure SetModemType(const ModemType: string);
+    procedure SetReceiveSignalStrength(const ReceiveSignalStrength: string);
   public
     constructor Create;
     destructor Destroy; override;
@@ -48,12 +51,23 @@ type
     property DailyLimit:      string read GetDailyLimit      write SetDailyLimit;
     property RefillAmount:    string read GetRefillAmount    write SetRefillAmount;
     property MegabytesLeft:   string read GetMegabytesLeft   write SetMegabytesLeft;
+    property ReceiveSignalStrength: string read GetReceiveSignalStrength write SetReceiveSignalStrength;
   end;
 
 
 function FetchHNetInfo: THNetInfo;
 
 implementation
+
+function THNetInfo.GetReceiveSignalStrength: string;
+begin
+  result := FReceiveSignalStrength;
+end;
+
+procedure THNetInfo.SetReceiveSignalStrength(const ReceiveSignalStrength: string);
+begin
+  FReceiveSignalStrength := ReceiveSignalStrength;
+end;
 
 constructor THNetInfo.Create;
 begin
@@ -162,14 +176,15 @@ begin
 
     Info := THNetInfo.Create;
 
-    Info.ModemType       := Data.ReadString('Data', 'STModel',                   '???');
-    Info.Uptime          := Data.ReadString('Data', 'Uptime',                    '???');
-    Info.TurboPageState  := Data.ReadString('Data', 'TurboPageState',            '???');
-    Info.Throttled       := Data.ReadString('Blob', 'FapThrottleState',          '???');
-    Info.TimeUntilRefill := Data.ReadString('Blob', 'FapTimeUntilRefill',        '???');
-    Info.DailyLimit      := Data.ReadString('Blob', 'AnytimePlanAllowance',      '???');
-    Info.RefillAmount    := Data.ReadString('Blob', 'RefillAmount',              '???');
-    Info.MegabytesLeft   := Data.ReadString('Blob', 'AnytimeAllowanceRemaining', '???');
+    Info.ModemType             := Data.ReadString('Data', 'STModel',                   '???');
+    Info.Uptime                := Data.ReadString('Data', 'Uptime',                    '???');
+    Info.TurboPageState        := Data.ReadString('Data', 'TurboPageState',            '???');
+    Info.Throttled             := Data.ReadString('Blob', 'FapThrottleState',          '???');
+    Info.TimeUntilRefill       := Data.ReadString('Blob', 'FapTimeUntilRefill',        '???');
+    Info.DailyLimit            := Data.ReadString('Blob', 'AnytimePlanAllowance',      '???');
+    Info.RefillAmount          := Data.ReadString('Blob', 'RefillAmount',              '???');
+    Info.MegabytesLeft         := Data.ReadString('Blob', 'AnytimeAllowanceRemaining', '???');
+    Info.ReceiveSignalStrength := Data.ReadString('Data', 'CurrentSQF',                '???');
 
     if Info.TurboPageState = '0' then
        Info.TurboPageState := 'On'

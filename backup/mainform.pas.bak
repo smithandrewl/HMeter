@@ -26,6 +26,8 @@ type
     ChartLineSeries2:        TLineSeries;
     ChartLegendPanel1:       TChartLegendPanel;
     grpDownloadLimit:        TGroupBox;
+    lblReceiveSignalStrength: TLabel;
+    lblReceiveSignalStrengthValue: TLabel;
     lblRefillAmountValue:    TLabel;
     lblDailyLimit:           TLabel;
     lblMegabytesLeft:        TLabel;
@@ -188,14 +190,15 @@ end;
 
 procedure TFormMain.UpdateUI(Info: THNetInfo);
 begin
-  lblModemTypeValue.Caption       := Info.ModemType;
-  lblUptimeValue.Caption          := Info.Uptime;
-  lblTurboPageStateValue.Caption  := Info.TurboPageState;
-  lblThrottledValue.Caption       := Info.Throttled;
-  lblTimeUntilRefillValue.Caption := Info.TimeUntilRefill;
-  lblDailyLimitValue.Caption      := Info.DailyLimit;
-  lblRefillAmountValue.Caption    := Info.RefillAmount;
-  lblMegabytesLeftValue.Caption   := Info.MegabytesLeft;
+  lblModemTypeValue.Caption             := Info.ModemType;
+  lblUptimeValue.Caption                := Info.Uptime;
+  lblTurboPageStateValue.Caption        := Info.TurboPageState;
+  lblThrottledValue.Caption             := Info.Throttled;
+  lblTimeUntilRefillValue.Caption       := Info.TimeUntilRefill;
+  lblDailyLimitValue.Caption            := Info.DailyLimit;
+  lblRefillAmountValue.Caption          := Info.RefillAmount;
+  lblMegabytesLeftValue.Caption         := Info.MegabytesLeft;
+  lblReceiveSignalStrengthValue.Caption := Info.ReceiveSignalStrength;
 end;
 
 end.

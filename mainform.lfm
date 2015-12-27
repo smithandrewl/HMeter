@@ -1,13 +1,13 @@
 object FormMain: TFormMain
-  Left = 571
-  Height = 557
-  Top = 326
+  Left = 345
+  Height = 682
+  Top = 92
   Width = 384
   AlphaBlend = True
   AlphaBlendValue = 225
   BorderStyle = bsNone
   Caption = 'HMeter'
-  ClientHeight = 557
+  ClientHeight = 682
   ClientWidth = 384
   Color = clBlack
   FormStyle = fsSystemStayOnTop
@@ -133,11 +133,11 @@ object FormMain: TFormMain
   end
   object grpDownloadLimit: TGroupBox
     Left = 8
-    Height = 328
+    Height = 456
     Top = 216
     Width = 368
     Caption = 'Download Limit: '
-    ClientHeight = 299
+    ClientHeight = 427
     ClientWidth = 364
     Font.Color = 18175
     Font.Height = -19
@@ -202,7 +202,7 @@ object FormMain: TFormMain
     object StatusImage: TImage
       Left = 56
       Height = 111
-      Top = 168
+      Top = 312
       Width = 259
       Picture.Data = {
         1754506F727461626C654E6574776F726B47726170686963C333000089504E47
@@ -681,6 +681,30 @@ object FormMain: TFormMain
       Width = 27
       Caption = '???'
       Color = 2960685
+      Font.Color = 18175
+      Font.Height = -16
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object lblReceiveSignalStrength: TLabel
+      Left = 16
+      Height = 23
+      Top = 168
+      Width = 181
+      Caption = 'Receive Signal Strength: '
+      Font.Color = clWhite
+      Font.Height = -16
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblReceiveSignalStrengthValue: TLabel
+      Left = 208
+      Height = 23
+      Top = 168
+      Width = 27
+      Caption = '???'
+      Color = clMenuBar
       Font.Color = 18175
       Font.Height = -16
       ParentColor = False
@@ -5021,9 +5045,9 @@ object FormMain: TFormMain
     top = 176
   end
   object Timer1: TTimer
-    Interval = 30000
+    Interval = 10000
     OnTimer = Timer1Timer
-    left = 214
+    left = 216
     top = 187
   end
 end

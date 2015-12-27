@@ -9,7 +9,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="72" Y="10"/>
-        <UsageCount Value="46"/>
+        <UsageCount Value="47"/>
       </Unit0>
       <Unit1>
         <Filename Value="mainform.pas"/>
@@ -18,9 +18,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainForm"/>
-        <TopLine Value="170"/>
-        <CursorPos Y="176"/>
-        <UsageCount Value="46"/>
+        <TopLine Value="172"/>
+        <CursorPos X="26" Y="185"/>
+        <UsageCount Value="47"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -30,9 +30,9 @@
         <UnitName Value="HNetInfo"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="148"/>
-        <CursorPos X="29" Y="175"/>
-        <UsageCount Value="36"/>
+        <TopLine Value="5"/>
+        <CursorPos X="26" Y="21"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -52,7 +52,7 @@
         <UsageCount Value="9"/>
       </Unit4>
     </Units>
-    <JumpHistory Count="23" HistoryIndex="22">
+    <JumpHistory Count="26" HistoryIndex="25">
       <Position1>
         <Filename Value="mainform.pas"/>
         <Caret Line="159" Column="38" TopLine="152"/>
@@ -145,6 +145,18 @@
         <Filename Value="mainform.pas"/>
         <Caret Line="134" TopLine="118"/>
       </Position23>
+      <Position24>
+        <Filename Value="hnetinfo.pas"/>
+        <Caret Line="175" Column="29" TopLine="148"/>
+      </Position24>
+      <Position25>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="10" Column="51"/>
+      </Position25>
+      <Position26>
+        <Filename Value="hnetinfo.pas"/>
+        <Caret Line="177" TopLine="174"/>
+      </Position26>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
