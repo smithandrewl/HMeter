@@ -118,7 +118,6 @@ begin
      Refresh;
 end;
 
-
 procedure TFormMain.FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
 begin
   if IsMouseDown then
@@ -127,9 +126,6 @@ begin
     Top  := Top  - CursorStartY + y;
   end;
 end;
-
-
-
 
 procedure TFormMain.FormMouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: integer);
@@ -183,6 +179,7 @@ procedure TFormMain.Refresh;
     Info: THNetInfo;
   begin
     Info := FetchHNetInfo();
+
     self.BeginFormUpdate;
     UpdateUI(Info);
     self.EndFormUpdate;

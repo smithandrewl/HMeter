@@ -171,6 +171,16 @@ begin
     Info.RefillAmount    := Data.ReadString('Blob', 'RefillAmount',              '???');
     Info.MegabytesLeft   := Data.ReadString('Blob', 'AnytimeAllowanceRemaining', '???');
 
+    if Info.TurboPageState = '0' then
+       Info.TurboPageState := 'On'
+    else
+        Info.TurboPageState := 'Off';
+
+    if Info.Throttled = '0' then
+       Info.Throttled := 'Yes'
+    else
+        Info.Throttled := 'No';
+
   finally
     DataStream.Free;
     Data.Free;
