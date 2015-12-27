@@ -617,7 +617,7 @@ object FormMain: TFormMain
       }
     end
     object lblThrottledValue: TLabel
-      Left = 152
+      Left = 208
       Height = 23
       Top = 0
       Width = 27
@@ -630,7 +630,7 @@ object FormMain: TFormMain
       Transparent = False
     end
     object lblTimeUntilRefillValue: TLabel
-      Left = 152
+      Left = 208
       Height = 23
       Top = 32
       Width = 27
@@ -643,7 +643,7 @@ object FormMain: TFormMain
       Transparent = False
     end
     object lblDailyLimitValue: TLabel
-      Left = 152
+      Left = 208
       Height = 23
       Top = 64
       Width = 27
@@ -656,7 +656,7 @@ object FormMain: TFormMain
       Transparent = False
     end
     object lblMegabytesLeftValue: TLabel
-      Left = 154
+      Left = 208
       Height = 23
       Top = 128
       Width = 27
@@ -669,7 +669,7 @@ object FormMain: TFormMain
       Transparent = False
     end
     object lblRefillAmountValue: TLabel
-      Left = 154
+      Left = 208
       Height = 23
       Top = 96
       Width = 27

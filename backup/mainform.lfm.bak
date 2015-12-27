@@ -2,13 +2,13 @@ object FormMain: TFormMain
   Left = 780
   Height = 610
   Top = 225
-  Width = 384
+  Width = 394
   AlphaBlend = True
   AlphaBlendValue = 225
   BorderStyle = bsNone
   Caption = 'HMeter'
   ClientHeight = 610
-  ClientWidth = 384
+  ClientWidth = 394
   Color = clBlack
   FormStyle = fsSystemStayOnTop
   OnCreate = FormCreate
@@ -86,7 +86,7 @@ object FormMain: TFormMain
     Left = 272
     Height = 56
     Top = 0
-    Width = 104
+    Width = 120
     Chart = Chart
   end
   object lblModemTypeValue: TLabel
@@ -129,10 +129,10 @@ object FormMain: TFormMain
     Left = 8
     Height = 376
     Top = 224
-    Width = 368
+    Width = 376
     Caption = 'Download Limit: '
     ClientHeight = 347
-    ClientWidth = 364
+    ClientWidth = 372
     Font.Color = 18175
     Font.Height = -19
     ParentFont = False
