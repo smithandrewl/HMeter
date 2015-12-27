@@ -7,21 +7,7 @@ unit mainForm;
     Drag & Drop
     http://forum.lazarus.freepascal.org/index.php?topic=11083.0
 
-  Notes:
     URL: http://192.168.0.1/getdeviceinfo/info.bin
-
-    [Data]
-    UplinkTXPower
-    TurboPageState
-    UpTime
-
-    [Blob]
-    FapThrottleState
-    FapTimeUntilRefill
-    AnytimeAllowanceRemaining
-    AnytimePlanAllowance
-    RefillAmount
-
 *)
 interface
 
@@ -40,13 +26,13 @@ type
     ChartLineSeries2:        TLineSeries;
     ChartLegendPanel1:       TChartLegendPanel;
     grpDownloadLimit:        TGroupBox;
-    lblRefillAmountValue: TLabel;
-    lblDailyLimit:      TLabel;
+    lblRefillAmountValue:    TLabel;
+    lblDailyLimit:           TLabel;
     lblMegabytesLeft:        TLabel;
     lblMegabytesLeftValue:   TLabel;
     lblModemTypeValue:       TLabel;
     lblRefillAmount:         TLabel;
-    lblDailyLimitValue:    TLabel;
+    lblDailyLimitValue:      TLabel;
     lblThrottled:            TLabel;
     lblThrottledValue:       TLabel;
     lblTimeUntilRefill:      TLabel;
@@ -132,7 +118,6 @@ begin
      Refresh;
 end;
 
-
 procedure TFormMain.FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
 begin
   if IsMouseDown then
@@ -141,9 +126,6 @@ begin
     Top  := Top  - CursorStartY + y;
   end;
 end;
-
-
-
 
 procedure TFormMain.FormMouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: integer);
@@ -197,6 +179,7 @@ procedure TFormMain.Refresh;
     Info: THNetInfo;
   begin
     Info := FetchHNetInfo();
+
     self.BeginFormUpdate;
     UpdateUI(Info);
     self.EndFormUpdate;

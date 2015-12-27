@@ -1,13 +1,13 @@
 object FormMain: TFormMain
-  Left = 629
-  Height = 693
-  Top = 208
+  Left = 571
+  Height = 557
+  Top = 326
   Width = 384
   AlphaBlend = True
   AlphaBlendValue = 225
   BorderStyle = bsNone
   Caption = 'HMeter'
-  ClientHeight = 693
+  ClientHeight = 557
   ClientWidth = 384
   Color = clBlack
   FormStyle = fsSystemStayOnTop
@@ -133,11 +133,11 @@ object FormMain: TFormMain
   end
   object grpDownloadLimit: TGroupBox
     Left = 8
-    Height = 432
-    Top = 224
+    Height = 328
+    Top = 216
     Width = 368
     Caption = 'Download Limit: '
-    ClientHeight = 403
+    ClientHeight = 299
     ClientWidth = 364
     Font.Color = 18175
     Font.Height = -19
@@ -202,7 +202,7 @@ object FormMain: TFormMain
     object StatusImage: TImage
       Left = 56
       Height = 111
-      Top = 240
+      Top = 168
       Width = 259
       Picture.Data = {
         1754506F727461626C654E6574776F726B47726170686963C333000089504E47
