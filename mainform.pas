@@ -201,31 +201,40 @@ begin
   lblMegabytesLeftValue.Caption         := Info.MegabytesLeft;
   lblReceiveSignalStrengthValue.Caption := Info.ReceiveSignalStrength;
 
+  if Info.ReceiveSignalStrength <> '???' then
   ChartLineSeries1.add( StrToFloat(Info.ReceiveSignalStrength));
 
-  DataLeft := StrToInt(Info.MegabytesLeft);
-
-  if DataLeft > 300 then
+  if Info.MegabytesLeft <> '???' then
   begin
-    StatusImageBarred.Visible := false;
-    StatusImageLow.Visible    := false;
-    StatusImageHigh.Visible   := true;
-  end
-  else if DataLeft > 200 then
-  begin
+    DataLeft := StrToInt(Info.MegabytesLeft);
 
-    StatusImageBarred.Visible := false;
-    StatusImageLow.Visible    := true;
-    StatusImageHigh.Visible   := false;
+    if DataLeft > 300 then
+    begin
+      StatusImageBarred.Visible := false;
+      StatusImageLow.Visible    := false;
+      StatusImageHigh.Visible   := true;
+    end
+    else if DataLeft > 200 then
+    begin
+
+      StatusImageBarred.Visible := false;
+      StatusImageLow.Visible    := true;
+      StatusImageHigh.Visible   := false;
+    end
+    else
+    begin
+      StatusImageBarred.Visible := true;
+      StatusImageLow.Visible    := false;
+      StatusImageHigh.visible   := false;
+    end;
   end
   else
   begin
-    StatusImageBarred.Visible := true;
+    StatusImageBarred.Visible := false;
     StatusImageLow.Visible    := false;
-    StatusImageHigh.visible   := false;
-  end;
+    StatusImageHigh.Visible   := false;
+  end
 end;
-
 end.
 
 
