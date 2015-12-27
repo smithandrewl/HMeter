@@ -51,6 +51,7 @@ type
     property DailyLimit:      string read GetDailyLimit      write SetDailyLimit;
     property RefillAmount:    string read GetRefillAmount    write SetRefillAmount;
     property MegabytesLeft:   string read GetMegabytesLeft   write SetMegabytesLeft;
+    property ReceiveSignalStrength: string read GetReceiveSignalStrength write SetReceiveSignalStrength;
   end;
 
 
