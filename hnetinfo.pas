@@ -5,7 +5,7 @@ unit HNetInfo;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, IniFiles, httpsend;
 
 type
   THNetInfo = class(TObject)
@@ -57,11 +57,12 @@ implementation
 
 constructor THNetInfo.Create;
 begin
+  inherited Create;
 end;
 
 destructor THNetInfo.Destroy;
 begin
-
+  inherited Destroy;
 end;
 
 function THNetInfo.GetModemType: string;
@@ -147,18 +148,37 @@ end;
 function FetchHNetInfo: THNetInfo;
 var
   Info: THNetInfo;
+  Data: TIniFile;
+  DataStream: TMemoryStream;
 begin
 
-  Info.ModemType       := 'ModemType';
-  Info.Uptime          := 'Uptime';
-  Info.TurboPageState  := 'TurboPageState';
-  Info.Throttled       := 'Throttled';
-  Info.TimeUntilRefill := 'TimeUntilRefill';
-  Info.DailyLimit      := 'DailyLimit';
-  Info.RefillAmount    := 'RefillAmount';
-  Info.MegabytesLeft   := 'MegabytesLeft';
+  DataStream := TMemoryStream.Create;
+
+  try
+    HttpGetBinary('http://192.168.0.1/getdeviceinfo/info.bin', DataStream);
+    DataStream.Position := 0;
+
+    Data := TIniFile.Create(DataStream);
+
+    Info := THNetInfo.Create;
+
+    Info.ModemType       := Data.ReadString('Data', 'STModel', '???');
+    Info.Uptime          := Data.ReadString('Data', 'Uptime', '???');
+    Info.TurboPageState  := Data.ReadString('Data', 'TurboPageState', '???');
+    Info.Throttled       :=  Data.ReadString('Blob', 'FapThrottleState', '???');
+    Info.TimeUntilRefill := Data.ReadString('Blob', 'FapTimeUntilRefill', '???');
+    Info.DailyLimit      :=  Data.ReadString('Blob', 'AnytimePlanAllowance', '???');
+    Info.RefillAmount    := Data.ReadString('Blob', 'RefillAmount', '???');
+    Info.MegabytesLeft   := Data.ReadString('Blob', 'AnytimeAllowanceRemaining', '???');
+
+  finally
+    DataStream.Free;
+    Data.Free;
+  end;
 
   result := Info;
+
+//  Data := TIniFile.Create(DataStream);
 end;
 
 end.

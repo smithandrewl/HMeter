@@ -1,16 +1,17 @@
 object FormMain: TFormMain
-  Left = 922
-  Height = 505
-  Top = 206
+  Left = 629
+  Height = 693
+  Top = 208
   Width = 384
   AlphaBlend = True
   AlphaBlendValue = 225
   BorderStyle = bsNone
   Caption = 'HMeter'
-  ClientHeight = 505
+  ClientHeight = 693
   ClientWidth = 384
   Color = clBlack
   FormStyle = fsSystemStayOnTop
+  OnCreate = FormCreate
   OnMouseDown = FormMouseDown
   OnMouseMove = FormMouseMove
   OnMouseUp = FormMouseUp
@@ -132,20 +133,21 @@ object FormMain: TFormMain
   end
   object grpDownloadLimit: TGroupBox
     Left = 8
-    Height = 272
+    Height = 432
     Top = 224
     Width = 368
     Caption = 'Download Limit: '
-    ClientHeight = 243
+    ClientHeight = 403
     ClientWidth = 364
     Font.Color = 18175
     Font.Height = -19
     ParentFont = False
     TabOrder = 2
+    OnClick = grpDownloadLimitClick
     object lblThrottled: TLabel
       Left = 14
       Height = 23
-      Top = 0
+      Top = 8
       Width = 71
       Caption = 'Throttled: '
       Font.Color = clWhite
@@ -156,7 +158,7 @@ object FormMain: TFormMain
     object lblTimeUntilRefill: TLabel
       Left = 14
       Height = 23
-      Top = 24
+      Top = 32
       Width = 118
       Caption = 'Time Until Refill:'
       Font.Color = clWhite
@@ -165,9 +167,9 @@ object FormMain: TFormMain
       ParentFont = False
     end
     object lblMegabytesLeft: TLabel
-      Left = 14
+      Left = 16
       Height = 23
-      Top = 104
+      Top = 128
       Width = 116
       Caption = 'Megabytes Left: '
       Font.Color = clWhite
@@ -175,10 +177,10 @@ object FormMain: TFormMain
       ParentColor = False
       ParentFont = False
     end
-    object lblDailyLimitValue: TLabel
-      Left = 14
+    object lblDailyLimit: TLabel
+      Left = 16
       Height = 23
-      Top = 48
+      Top = 64
       Width = 83
       Caption = 'Daily Limit: '
       Font.Color = clWhite
@@ -187,9 +189,9 @@ object FormMain: TFormMain
       ParentFont = False
     end
     object lblRefillAmount: TLabel
-      Left = 14
+      Left = 16
       Height = 23
-      Top = 72
+      Top = 96
       Width = 104
       Caption = 'Refill Amount: '
       Font.Color = clWhite
@@ -200,7 +202,7 @@ object FormMain: TFormMain
     object StatusImage: TImage
       Left = 56
       Height = 111
-      Top = 128
+      Top = 240
       Width = 259
       Picture.Data = {
         1754506F727461626C654E6574776F726B47726170686963C333000089504E47
@@ -622,9 +624,10 @@ object FormMain: TFormMain
     end
     object lblThrottledValue: TLabel
       Left = 152
-      Height = 1
+      Height = 23
       Top = 0
-      Width = 1
+      Width = 27
+      Caption = '???'
       Color = clMenuBar
       Font.Color = 18175
       Font.Height = -16
@@ -634,9 +637,10 @@ object FormMain: TFormMain
     end
     object lblTimeUntilRefillValue: TLabel
       Left = 152
-      Height = 1
+      Height = 23
       Top = 32
-      Width = 1
+      Width = 27
+      Caption = '???'
       Color = clMenuBar
       Font.Color = 18175
       Font.Height = -16
@@ -644,11 +648,12 @@ object FormMain: TFormMain
       ParentFont = False
       Transparent = False
     end
-    object lblRefillAmountValue: TLabel
+    object lblDailyLimitValue: TLabel
       Left = 152
-      Height = 1
+      Height = 23
       Top = 64
-      Width = 1
+      Width = 27
+      Caption = '???'
       Color = clMenuBar
       Font.Color = 18175
       Font.Height = -16
@@ -657,11 +662,25 @@ object FormMain: TFormMain
       Transparent = False
     end
     object lblMegabytesLeftValue: TLabel
-      Left = 152
-      Height = 1
-      Top = 104
-      Width = 1
+      Left = 154
+      Height = 23
+      Top = 128
+      Width = 27
+      Caption = '???'
       Color = clMenuBar
+      Font.Color = 18175
+      Font.Height = -16
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object lblRefillAmountValue: TLabel
+      Left = 154
+      Height = 23
+      Top = 96
+      Width = 27
+      Caption = '???'
+      Color = 2960685
       Font.Color = 18175
       Font.Height = -16
       ParentColor = False
@@ -5001,11 +5020,10 @@ object FormMain: TFormMain
     left = 304
     top = 176
   end
-  object IdleTimer1: TIdleTimer
-    AutoEndEvent = itaOnIdleEnd
-    Interval = 500
-    OnTimer = IdleTimer1Timer
-    left = 306
-    top = 300
+  object Timer1: TTimer
+    Interval = 30000
+    OnTimer = Timer1Timer
+    left = 214
+    top = 187
   end
 end

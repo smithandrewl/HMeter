@@ -40,13 +40,13 @@ type
     ChartLineSeries2:        TLineSeries;
     ChartLegendPanel1:       TChartLegendPanel;
     grpDownloadLimit:        TGroupBox;
-    IdleTimer1:              TIdleTimer;
-    lblDailyLimitValue:      TLabel;
+    lblRefillAmountValue: TLabel;
+    lblDailyLimit:      TLabel;
     lblMegabytesLeft:        TLabel;
     lblMegabytesLeftValue:   TLabel;
     lblModemTypeValue:       TLabel;
     lblRefillAmount:         TLabel;
-    lblRefillAmountValue:    TLabel;
+    lblDailyLimitValue:    TLabel;
     lblThrottled:            TLabel;
     lblThrottledValue:       TLabel;
     lblTimeUntilRefill:      TLabel;
@@ -66,8 +66,10 @@ type
     RandomChartSource2:      TRandomChartSource;
     RefreshTimer:            TTimer;
     SysTray:                 TTrayIcon;
+    Timer1: TTimer;
 
 
+    procedure FormCreate(Sender: TObject);
     procedure FormMouseDown(
       Sender: TObject;
       Button: TMouseButton;
@@ -87,15 +89,18 @@ type
     );
 
     procedure AppHideMenuItemClick(Sender: TObject);
+    procedure grpDownloadLimitClick(Sender: TObject);
     procedure IdleTimer1Timer(Sender: TObject);
     procedure SysTrayExitMenuItemClick(Sender: TObject);
     procedure AppExitMenuItemClick(Sender: TObject);
     procedure SysTrayClick(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
     { private declarations }
     IsMouseDown: boolean;
     CursorStartX, CursorStartY: integer;
     procedure UpdateUI(Info: THNetInfo);
+    procedure Refresh;
   public
     { public declarations }
 
@@ -122,6 +127,11 @@ begin
 end;
 
 
+procedure TFormMain.FormCreate(Sender: TObject);
+begin
+     Refresh;
+end;
+
 
 procedure TFormMain.FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
 begin
@@ -131,6 +141,9 @@ begin
     Top  := Top  - CursorStartY + y;
   end;
 end;
+
+
+
 
 procedure TFormMain.FormMouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: integer);
@@ -144,14 +157,18 @@ begin
   Visible := False;
 end;
 
+procedure TFormMain.grpDownloadLimitClick(Sender: TObject);
+begin
+end;
+
 procedure TFormMain.IdleTimer1Timer(Sender: TObject);
   var
     Info: THNetInfo;
   begin
-    IdleTimer1.enabled := false;
-    Info               := FetchHNetInfo();
+    Info := FetchHNetInfo();
 
     UpdateUI(Info);
+    Info.Free;
 end;
 
 procedure TFormMain.SysTrayExitMenuItemClick(Sender: TObject);
@@ -168,6 +185,22 @@ procedure TFormMain.SysTrayClick(Sender: TObject);
 begin
   Visible     := not Visible;
   IsMouseDown := False;
+end;
+
+procedure TFormMain.Timer1Timer(Sender: TObject);
+begin
+  Refresh;
+end;
+
+procedure TFormMain.Refresh;
+  var
+    Info: THNetInfo;
+  begin
+    Info := FetchHNetInfo();
+    self.BeginFormUpdate;
+    UpdateUI(Info);
+    self.EndFormUpdate;
+    Info.Free;
 end;
 
 procedure TFormMain.UpdateUI(Info: THNetInfo);
