@@ -224,9 +224,7 @@ begin
   end
   else
   begin
-    StatusImageBarred.Visible := false;
-    StatusImageLow.Visible    := false;
-    StatusImageHigh.Visible   := false;
+    UpdateStatusImages(false, false, false);
   end
 end;
 

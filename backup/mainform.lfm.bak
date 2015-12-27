@@ -45,7 +45,7 @@ object FormMain: TFormMain
     )
     Color = 1447446
     object ChartLineSeries1: TLineSeries
-      Title = 'Tx Speed'
+      Title = 'Receive Signal'
       LinePen.Color = clRed
     end
   end
