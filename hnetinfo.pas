@@ -186,6 +186,8 @@ begin
     Info.MegabytesLeft         := Data.ReadString('Blob', 'AnytimeAllowanceRemaining', '???');
     Info.ReceiveSignalStrength := Data.ReadString('Data', 'CurrentSQF',                '???');
 
+
+
     if Info.TurboPageState = '0' then
        Info.TurboPageState := 'On'
     else

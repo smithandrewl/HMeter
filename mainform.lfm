@@ -1,13 +1,13 @@
 object FormMain: TFormMain
-  Left = 345
-  Height = 682
-  Top = 92
+  Left = 377
+  Height = 610
+  Top = 243
   Width = 384
   AlphaBlend = True
   AlphaBlendValue = 225
   BorderStyle = bsNone
   Caption = 'HMeter'
-  ClientHeight = 682
+  ClientHeight = 610
   ClientWidth = 384
   Color = clBlack
   FormStyle = fsSystemStayOnTop
@@ -47,12 +47,6 @@ object FormMain: TFormMain
     object ChartLineSeries1: TLineSeries
       Title = 'Tx Speed'
       LinePen.Color = clRed
-      Source = RandomChartSource1
-    end
-    object ChartLineSeries2: TLineSeries
-      Title = 'Rx Speed'
-      LinePen.Color = 65465
-      Source = RandomChartSource2
     end
   end
   object lblModemType: TLabel
@@ -133,11 +127,11 @@ object FormMain: TFormMain
   end
   object grpDownloadLimit: TGroupBox
     Left = 8
-    Height = 456
-    Top = 216
+    Height = 376
+    Top = 224
     Width = 368
     Caption = 'Download Limit: '
-    ClientHeight = 427
+    ClientHeight = 347
     ClientWidth = 364
     Font.Color = 18175
     Font.Height = -19
@@ -202,7 +196,7 @@ object FormMain: TFormMain
     object StatusImage: TImage
       Left = 56
       Height = 111
-      Top = 312
+      Top = 216
       Width = 259
       Picture.Data = {
         1754506F727461626C654E6574776F726B47726170686963C333000089504E47
@@ -711,16 +705,6 @@ object FormMain: TFormMain
       ParentFont = False
       Transparent = False
     end
-  end
-  object RandomChartSource1: TRandomChartSource
-    PointsNumber = 10
-    RandSeed = 1801767885
-    XMax = 100
-    XMin = 0
-    YMax = 10
-    YMin = 0
-    left = 272
-    top = 176
   end
   object SysTray: TTrayIcon
     PopUpMenu = SysTrayPopupMenu
@@ -5034,18 +5018,7 @@ object FormMain: TFormMain
       OnClick = AppExitMenuItemClick
     end
   end
-  object RandomChartSource2: TRandomChartSource
-    PointsNumber = 10
-    RandSeed = 1574346409
-    XMax = 100
-    XMin = 0
-    YMax = 10
-    YMin = 0
-    left = 304
-    top = 176
-  end
   object Timer1: TTimer
-    Interval = 10000
     OnTimer = Timer1Timer
     left = 216
     top = 187

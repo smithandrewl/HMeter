@@ -43,14 +43,14 @@ type
     constructor Create;
     destructor Destroy; override;
   published
-    property ModemType:       string read GetModemType       write SetModemType;
-    property Uptime:          string read GetUptime          write SetUptime;
-    property TurboPageState:  string read GetTurboPageState  write SetTurboPageState;
-    property Throttled:       string read GetThrottled       write SetThrottled;
-    property TimeUntilRefill: string read GetTimeUntilRefill write SetTimeUntilRefill;
-    property DailyLimit:      string read GetDailyLimit      write SetDailyLimit;
-    property RefillAmount:    string read GetRefillAmount    write SetRefillAmount;
-    property MegabytesLeft:   string read GetMegabytesLeft   write SetMegabytesLeft;
+    property ModemType:             string read GetModemType             write SetModemType;
+    property Uptime:                string read GetUptime                write SetUptime;
+    property TurboPageState:        string read GetTurboPageState        write SetTurboPageState;
+    property Throttled:             string read GetThrottled             write SetThrottled;
+    property TimeUntilRefill:       string read GetTimeUntilRefill       write SetTimeUntilRefill;
+    property DailyLimit:            string read GetDailyLimit            write SetDailyLimit;
+    property RefillAmount:          string read GetRefillAmount          write SetRefillAmount;
+    property MegabytesLeft:         string read GetMegabytesLeft         write SetMegabytesLeft;
     property ReceiveSignalStrength: string read GetReceiveSignalStrength write SetReceiveSignalStrength;
   end;
 

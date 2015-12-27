@@ -23,7 +23,6 @@ type
   TFormMain = class(TForm)
     Chart:                   TChart;
     ChartLineSeries1:        TLineSeries;
-    ChartLineSeries2:        TLineSeries;
     ChartLegendPanel1:       TChartLegendPanel;
     grpDownloadLimit:        TGroupBox;
     lblReceiveSignalStrength: TLabel;
@@ -50,8 +49,6 @@ type
     AppExitMenuItem:         TMenuItem;
     SysTrayPopupMenu:        TPopupMenu;
     AppPopupMenu:            TPopupMenu;
-    RandomChartSource1:      TRandomChartSource;
-    RandomChartSource2:      TRandomChartSource;
     RefreshTimer:            TTimer;
     SysTray:                 TTrayIcon;
     Timer1: TTimer;
@@ -199,6 +196,8 @@ begin
   lblRefillAmountValue.Caption          := Info.RefillAmount;
   lblMegabytesLeftValue.Caption         := Info.MegabytesLeft;
   lblReceiveSignalStrengthValue.Caption := Info.ReceiveSignalStrength;
+
+  ChartLineSeries1.add( StrToFloat(Info.ReceiveSignalStrength));
 end;
 
 end.

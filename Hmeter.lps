@@ -18,8 +18,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainForm"/>
+        <IsVisibleTab Value="True"/>
         <TopLine Value="172"/>
-        <CursorPos X="26" Y="185"/>
+        <CursorPos X="64" Y="200"/>
         <UsageCount Value="47"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -28,10 +29,9 @@
         <Filename Value="hnetinfo.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HNetInfo"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="46"/>
-        <CursorPos X="35" Y="63"/>
+        <TopLine Value="172"/>
+        <CursorPos X="5" Y="189"/>
         <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -52,115 +52,127 @@
         <UsageCount Value="9"/>
       </Unit4>
     </Units>
-    <JumpHistory Count="27" HistoryIndex="26">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="mainform.pas"/>
-        <Caret Line="159" Column="38" TopLine="152"/>
+        <Caret Line="119" Column="23" TopLine="111"/>
       </Position1>
       <Position2>
         <Filename Value="mainform.pas"/>
-        <Caret Line="126" TopLine="118"/>
+        <Caret Line="156" TopLine="147"/>
       </Position2>
       <Position3>
         <Filename Value="mainform.pas"/>
-        <Caret Line="69" TopLine="55"/>
+        <Caret Line="17" TopLine="13"/>
       </Position3>
       <Position4>
         <Filename Value="mainform.pas"/>
-        <Caret Line="119" Column="23" TopLine="111"/>
+        <Caret Line="161" Column="6" TopLine="159"/>
       </Position4>
       <Position5>
         <Filename Value="mainform.pas"/>
-        <Caret Line="156" TopLine="147"/>
+        <Caret Line="125" TopLine="109"/>
       </Position5>
       <Position6>
         <Filename Value="mainform.pas"/>
-        <Caret Line="17" TopLine="13"/>
+        <Caret Line="106" Column="6" TopLine="106"/>
       </Position6>
       <Position7>
         <Filename Value="mainform.pas"/>
-        <Caret Line="161" Column="6" TopLine="159"/>
+        <Caret Line="184" Column="3" TopLine="157"/>
       </Position7>
       <Position8>
         <Filename Value="mainform.pas"/>
-        <Caret Line="125" TopLine="109"/>
+        <Caret Line="185" Column="3" TopLine="156"/>
       </Position8>
       <Position9>
         <Filename Value="mainform.pas"/>
-        <Caret Line="106" Column="6" TopLine="106"/>
+        <Caret Line="152" TopLine="145"/>
       </Position9>
       <Position10>
         <Filename Value="mainform.pas"/>
-        <Caret Line="184" Column="3" TopLine="157"/>
+        <Caret Line="151" TopLine="144"/>
       </Position10>
       <Position11>
         <Filename Value="mainform.pas"/>
-        <Caret Line="185" Column="3" TopLine="156"/>
+        <Caret Line="165" TopLine="158"/>
       </Position11>
       <Position12>
         <Filename Value="mainform.pas"/>
-        <Caret Line="152" TopLine="145"/>
+        <Caret Line="198" Column="15" TopLine="176"/>
       </Position12>
       <Position13>
         <Filename Value="mainform.pas"/>
-        <Caret Line="151" TopLine="144"/>
+        <Caret Line="127" TopLine="110"/>
       </Position13>
       <Position14>
         <Filename Value="mainform.pas"/>
-        <Caret Line="165" TopLine="158"/>
+        <Caret Line="138" TopLine="127"/>
       </Position14>
       <Position15>
         <Filename Value="mainform.pas"/>
-        <Caret Line="198" Column="15" TopLine="176"/>
+        <Caret Line="194" Column="15" TopLine="167"/>
       </Position15>
       <Position16>
         <Filename Value="mainform.pas"/>
-        <Caret Line="127" TopLine="110"/>
+        <Caret Line="183" Column="3" TopLine="166"/>
       </Position16>
       <Position17>
         <Filename Value="mainform.pas"/>
-        <Caret Line="138" TopLine="127"/>
+        <Caret Line="102" Column="15" TopLine="86"/>
       </Position17>
       <Position18>
         <Filename Value="mainform.pas"/>
-        <Caret Line="194" Column="15" TopLine="167"/>
+        <Caret Line="203" Column="5" TopLine="185"/>
       </Position18>
       <Position19>
         <Filename Value="mainform.pas"/>
-        <Caret Line="183" Column="3" TopLine="166"/>
+        <Caret Line="132" Column="14" TopLine="130"/>
       </Position19>
       <Position20>
         <Filename Value="mainform.pas"/>
-        <Caret Line="102" Column="15" TopLine="86"/>
+        <Caret Line="134" TopLine="118"/>
       </Position20>
       <Position21>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="203" Column="5" TopLine="185"/>
+        <Filename Value="hnetinfo.pas"/>
+        <Caret Line="175" Column="29" TopLine="148"/>
       </Position21>
       <Position22>
         <Filename Value="mainform.pas"/>
-        <Caret Line="132" Column="14" TopLine="130"/>
+        <Caret Line="10" Column="51"/>
       </Position22>
       <Position23>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="134" TopLine="118"/>
+        <Filename Value="hnetinfo.pas"/>
+        <Caret Line="177" TopLine="174"/>
       </Position23>
       <Position24>
         <Filename Value="hnetinfo.pas"/>
-        <Caret Line="175" Column="29" TopLine="148"/>
+        <Caret Line="21" Column="27" TopLine="134"/>
       </Position24>
       <Position25>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="10" Column="51"/>
+        <Filename Value="hnetinfo.pas"/>
+        <Caret Line="63" Column="35" TopLine="46"/>
       </Position25>
       <Position26>
         <Filename Value="hnetinfo.pas"/>
-        <Caret Line="177" TopLine="174"/>
+        <Caret Line="66" Column="11" TopLine="49"/>
       </Position26>
       <Position27>
-        <Filename Value="hnetinfo.pas"/>
-        <Caret Line="21" Column="27" TopLine="134"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="203" Column="64" TopLine="175"/>
       </Position27>
+      <Position28>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="202" Column="64" TopLine="174"/>
+      </Position28>
+      <Position29>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="201" Column="64" TopLine="173"/>
+      </Position29>
+      <Position30>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="200" Column="64" TopLine="172"/>
+      </Position30>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
