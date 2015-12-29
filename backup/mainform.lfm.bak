@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 780
+  Left = 1132
   Height = 610
-  Top = 225
+  Top = 137
   Width = 394
   AlphaBlend = True
   AlphaBlendValue = 225
@@ -1556,6 +1556,15 @@ object FormMain: TFormMain
         036F987FFCFFAB38C5F020BC6ABE0000000049454E44AE426082
       }
     end
+  end
+  object btnResetGraph: TButton
+    Left = 280
+    Height = 25
+    Top = 40
+    Width = 104
+    Caption = 'Reset Graph'
+    OnClick = btnResetGraphClick
+    TabOrder = 3
   end
   object SysTray: TTrayIcon
     PopUpMenu = SysTrayPopupMenu

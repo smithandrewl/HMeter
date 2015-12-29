@@ -55,7 +55,7 @@ type
   end;
 
 
-function FetchHNetInfo: THNetInfo;
+procedure FetchHNetInfo(Info: THNetInfo);
 
 implementation
 
@@ -159,9 +159,8 @@ begin
   FMegabytesLeft := MegabytesLeft;
 end;
 
-function FetchHNetInfo: THNetInfo;
+procedure FetchHNetInfo(Info: THNetInfo);
 var
-  Info:       THNetInfo;
   Data:       TIniFile;
   DataStream: TMemoryStream;
 begin
@@ -174,9 +173,7 @@ begin
 
     Data := TIniFile.Create(DataStream);
 
-    Info := THNetInfo.Create;
-
-    Info.ModemType             := Data.ReadString('Data', 'STModel',                   '???');
+    Info.ModemType             := Data.ReadString('Data', 'STModel',                   'No Modem Found');
     Info.Uptime                := Data.ReadString('Data', 'Uptime',                    '???');
     Info.TurboPageState        := Data.ReadString('Data', 'TurboPageState',            '???');
     Info.Throttled             := Data.ReadString('Blob', 'FapThrottleState',          '???');
@@ -186,24 +183,19 @@ begin
     Info.MegabytesLeft         := Data.ReadString('Blob', 'AnytimeAllowanceRemaining', '???');
     Info.ReceiveSignalStrength := Data.ReadString('Data', 'CurrentSQF',                '???');
 
+    case Info.TurboPageState of
+      '0': Info.TurboPageState := 'On';
+      '1': Info.TurboPageState := 'Off';
+    end;
 
-
-    if Info.TurboPageState = '0' then
-       Info.TurboPageState := 'On'
-    else
-        Info.TurboPageState := 'Off';
-
-    if Info.Throttled = '0' then
-       Info.Throttled := 'Yes'
-    else
-        Info.Throttled := 'No';
-
+    case Info.Throttled of
+      '0': Info.Throttled := 'Yes';
+      '1': Info.Throttled := 'No';
+    end;
   finally
     DataStream.Free;
     Data.Free;
   end;
-
-  result := Info;
 end;
 
 end.

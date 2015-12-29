@@ -12,50 +12,52 @@ unit mainForm;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, TAChartImageList, TASources, TAGraph, TASeries,
-  TAStyles, TALegendPanel, RTTICtrls, LvlGraphCtrl, Forms, Controls, Graphics,
-  Dialogs, ExtCtrls, StdCtrls, Menus, IniPropStorage, LResources, HNetInfo;
+  Classes, SysUtils, FileUtil,TAGraph, TASeries,
+  TALegendPanel, RTTICtrls, Forms, Controls, Graphics,
+  Dialogs, ExtCtrls, StdCtrls, Menus, LResources, HNetInfo;
 
 type
 
   { TFormMain }
 
   TFormMain = class(TForm)
-    Chart:                   TChart;
-    ChartLineSeries1:        TLineSeries;
-    ChartLegendPanel1:       TChartLegendPanel;
-    grpDownloadLimit:        TGroupBox;
-    lblReceiveSignalStrength: TLabel;
+    btnResetGraph: TButton;
+    Chart:                         TChart;
+    ChartLineSeries1:              TLineSeries;
+    ChartLegendPanel1:             TChartLegendPanel;
+    grpDownloadLimit:              TGroupBox;
+    lblReceiveSignalStrength:      TLabel;
     lblReceiveSignalStrengthValue: TLabel;
-    lblRefillAmountValue:    TLabel;
-    lblDailyLimit:           TLabel;
-    lblMegabytesLeft:        TLabel;
-    lblMegabytesLeftValue:   TLabel;
-    lblModemTypeValue:       TLabel;
-    lblRefillAmount:         TLabel;
-    lblDailyLimitValue:      TLabel;
-    lblThrottled:            TLabel;
-    lblThrottledValue:       TLabel;
-    lblTimeUntilRefill:      TLabel;
-    lblTimeUntilRefillValue: TLabel;
-    lblUptimeValue:          TLabel;
-    lblTurboPageStateValue:  TLabel;
-    lblModemType:            TLabel;
-    lblUptime:               TLabel;
-    lblTurboPageState:       TLabel;
-    AppHideMenuItem:         TMenuItem;
+    lblRefillAmountValue:          TLabel;
+    lblDailyLimit:                 TLabel;
+    lblMegabytesLeft:              TLabel;
+    lblMegabytesLeftValue:         TLabel;
+    lblModemTypeValue:             TLabel;
+    lblRefillAmount:               TLabel;
+    lblDailyLimitValue:            TLabel;
+    lblThrottled:                  TLabel;
+    lblThrottledValue:             TLabel;
+    lblTimeUntilRefill:            TLabel;
+    lblTimeUntilRefillValue:       TLabel;
+    lblUptimeValue:                TLabel;
+    lblTurboPageStateValue:        TLabel;
+    lblModemType:                  TLabel;
+    lblUptime:                     TLabel;
+    lblTurboPageState:             TLabel;
+    AppHideMenuItem:               TMenuItem;
     StatusImageBarred:             TImage;
-    StatusImageHigh: TImage;
-    StatusImageLow: TImage;
-    SysTrayExitMenuItem:     TMenuItem;
-    AppExitMenuItem:         TMenuItem;
-    SysTrayPopupMenu:        TPopupMenu;
-    AppPopupMenu:            TPopupMenu;
-    RefreshTimer:            TTimer;
-    SysTray:                 TTrayIcon;
-    Timer1: TTimer;
+    StatusImageHigh:               TImage;
+    StatusImageLow:                TImage;
+    SysTrayExitMenuItem:           TMenuItem;
+    AppExitMenuItem:               TMenuItem;
+    SysTrayPopupMenu:              TPopupMenu;
+    AppPopupMenu:                  TPopupMenu;
+    RefreshTimer:                  TTimer;
+    SysTray:                       TTrayIcon;
+    Timer1:                        TTimer;
 
 
+    procedure btnResetGraphClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormMouseDown(
       Sender: TObject;
@@ -77,7 +79,6 @@ type
 
     procedure AppHideMenuItemClick(Sender: TObject);
     procedure grpDownloadLimitClick(Sender: TObject);
-    procedure IdleTimer1Timer(Sender: TObject);
     procedure SysTrayExitMenuItemClick(Sender: TObject);
     procedure AppExitMenuItemClick(Sender: TObject);
     procedure SysTrayClick(Sender: TObject);
@@ -114,10 +115,14 @@ begin
   end;
 end;
 
-
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
      Refresh;
+end;
+
+procedure TFormMain.btnResetGraphClick(Sender: TObject);
+begin
+  ChartLineSeries1.Clear();
 end;
 
 procedure TFormMain.FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
@@ -132,7 +137,6 @@ end;
 procedure TFormMain.FormMouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: integer);
 begin
-
   IsMouseDown := False;
 end;
 
@@ -143,16 +147,6 @@ end;
 
 procedure TFormMain.grpDownloadLimitClick(Sender: TObject);
 begin
-end;
-
-procedure TFormMain.IdleTimer1Timer(Sender: TObject);
-  var
-    Info: THNetInfo;
-  begin
-    Info := FetchHNetInfo();
-
-    UpdateUI(Info);
-    Info.Free;
 end;
 
 procedure TFormMain.SysTrayExitMenuItemClick(Sender: TObject);
@@ -180,7 +174,8 @@ procedure TFormMain.Refresh;
   var
     Info: THNetInfo;
   begin
-    Info := FetchHNetInfo();
+    Info := THNetInfo.Create;
+    FetchHNetInfo(Info);
 
     self.BeginFormUpdate;
     UpdateUI(Info);
