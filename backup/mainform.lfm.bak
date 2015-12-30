@@ -5856,10 +5856,10 @@ object FormMain: TFormMain
     Visible = True
     OnClick = SysTrayClick
     left = 336
-    top = 176
+    top = 168
   end
   object SysTrayPopupMenu: TPopupMenu
-    left = 272
+    left = 296
     top = 136
     object SysTrayExitMenuItem: TMenuItem
       Caption = 'Exit'
@@ -5867,7 +5867,7 @@ object FormMain: TFormMain
     end
   end
   object AppPopupMenu: TPopupMenu
-    left = 312
+    left = 336
     top = 136
     object AppHideMenuItem: TMenuItem
       Caption = '&Hide'
@@ -5880,7 +5880,7 @@ object FormMain: TFormMain
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
-    left = 216
-    top = 187
+    left = 296
+    top = 168
   end
 end

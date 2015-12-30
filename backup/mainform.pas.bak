@@ -125,12 +125,6 @@ begin
   ChartLineSeries1.Clear();
 end;
 
-procedure TFormMain.FormMouseDown(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X: integer; Y: integer);
-begin
-
-end;
-
 procedure TFormMain.FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: integer);
 begin
   if IsMouseDown then
@@ -138,12 +132,6 @@ begin
     Left := Left - CursorStartX + X;
     Top  := Top  - CursorStartY + y;
   end;
-end;
-
-procedure TFormMain.FormMouseUp(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X: integer; Y: integer);
-begin
-
 end;
 
 procedure TFormMain.FormMouseUp(Sender: TObject; Button: TMouseButton;

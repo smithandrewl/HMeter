@@ -7,6 +7,15 @@ interface
 uses
   Classes, SysUtils, IniFiles, httpsend;
 
+const
+  InfoUrl = 'http://192.168.0.1/getdeviceinfo/info.bin';
+  MsgNoModemFound = 'No Modem Found.';
+  MsgUnknownValue = '???';
+  MsgOn = 'On';
+  MsgOff = 'Off';
+  MsgYes = 'Yes';
+  MsgNo = 'No';
+
 type
   THNetInfo = class(TObject)
   private
@@ -168,29 +177,32 @@ begin
   DataStream := TMemoryStream.Create;
 
   try
-    HttpGetBinary('http://192.168.0.1/getdeviceinfo/info.bin', DataStream);
+    HttpGetBinary(InfoUrl, DataStream);
     DataStream.Position := 0;
 
     Data := TIniFile.Create(DataStream);
 
-    Info.ModemType             := Data.ReadString('Data', 'STModel',                   'No Modem Found');
-    Info.Uptime                := Data.ReadString('Data', 'Uptime',                    '???');
-    Info.TurboPageState        := Data.ReadString('Data', 'TurboPageState',            '???');
-    Info.Throttled             := Data.ReadString('Blob', 'FapThrottleState',          '???');
-    Info.TimeUntilRefill       := Data.ReadString('Blob', 'FapTimeUntilRefill',        '???');
-    Info.DailyLimit            := Data.ReadString('Blob', 'AnytimePlanAllowance',      '???');
-    Info.RefillAmount          := Data.ReadString('Blob', 'RefillAmount',              '???');
-    Info.MegabytesLeft         := Data.ReadString('Blob', 'AnytimeAllowanceRemaining', '???');
-    Info.ReceiveSignalStrength := Data.ReadString('Data', 'CurrentSQF',                '???');
+    with Info do
+    begin
+      ModemType             := Data.ReadString('Data', 'STModel',                   MsgNoModemFound);
+      Uptime                := Data.ReadString('Data', 'Uptime',                    MsgUnknownValue);
+      TurboPageState        := Data.ReadString('Data', 'TurboPageState',            MsgUnknownValue);
+      Throttled             := Data.ReadString('Blob', 'FapThrottleState',          MsgUnknownValue);
+      TimeUntilRefill       := Data.ReadString('Blob', 'FapTimeUntilRefill',        MsgUnknownValue);
+      DailyLimit            := Data.ReadString('Blob', 'AnytimePlanAllowance',      MsgUnknownValue);
+      RefillAmount          := Data.ReadString('Blob', 'RefillAmount',              MsgUnknownValue);
+      MegabytesLeft         := Data.ReadString('Blob', 'AnytimeAllowanceRemaining', MsgUnknownValue);
+      ReceiveSignalStrength := Data.ReadString('Data', 'CurrentSQF',                MsgUnknownValue);
+    end;
 
     case Info.TurboPageState of
-      '0': Info.TurboPageState := 'On';
-      '1': Info.TurboPageState := 'Off';
+      '0': Info.TurboPageState := MsgOn;
+      '1': Info.TurboPageState := MsgOff;
     end;
 
     case Info.Throttled of
-      '0': Info.Throttled := 'Yes';
-      '1': Info.Throttled := 'No';
+      '0': Info.Throttled := MsgYes;
+      '1': Info.Throttled := MsgNo;
     end;
   finally
     DataStream.Free;
