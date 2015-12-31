@@ -14,7 +14,8 @@ interface
 uses
   Classes, SysUtils, FileUtil,TAGraph, TASeries,
   TALegendPanel, RTTICtrls, Forms, Controls, Graphics,
-  Dialogs, ExtCtrls, StdCtrls, Menus, LResources, HNetInfo;
+  Dialogs, ExtCtrls, StdCtrls, Menus, LResources, HNetInfo,
+  FormSettings;
 
 type
 
@@ -45,6 +46,7 @@ type
     lblUptime:                     TLabel;
     lblTurboPageState:             TLabel;
     AppHideMenuItem:               TMenuItem;
+    SysTraySettingsMenuItem: TMenuItem;
     StatusImageBarred:             TImage;
     StatusImageHigh:               TImage;
     StatusImageLow:                TImage;
@@ -82,6 +84,7 @@ type
     procedure SysTrayExitMenuItemClick(Sender: TObject);
     procedure AppExitMenuItemClick(Sender: TObject);
     procedure SysTrayClick(Sender: TObject);
+    procedure SysTraySettingsMenuItemClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
   private
     { private declarations }
@@ -117,7 +120,7 @@ end;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
-     Refresh;
+  Refresh;
 end;
 
 procedure TFormMain.btnResetGraphClick(Sender: TObject);
@@ -163,6 +166,11 @@ procedure TFormMain.SysTrayClick(Sender: TObject);
 begin
   Visible     := not Visible;
   IsMouseDown := False;
+end;
+
+procedure TFormMain.SysTraySettingsMenuItemClick(Sender: TObject);
+begin
+  SettingsForm.Visible:= true;
 end;
 
 procedure TFormMain.Timer1Timer(Sender: TObject);

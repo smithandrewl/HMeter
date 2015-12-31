@@ -47,7 +47,7 @@
         <PackageName Value="LCL"/>
       </Item6>
     </RequiredPackages>
-    <Units Count="3">
+    <Units Count="4">
       <Unit0>
         <Filename Value="Hmeter.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -65,6 +65,13 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="HNetInfo"/>
       </Unit2>
+      <Unit3>
+        <Filename Value="formsettings.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormSettings"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormSettings"/>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

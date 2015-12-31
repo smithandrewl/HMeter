@@ -1,0 +1,39 @@
+unit FormSettings;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
+  StdCtrls, Buttons;
+
+type
+
+  { TFormSettings }
+
+  TFormSettings = class(TForm)
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    Label1: TLabel;
+    Label2: TLabel;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    TrackBar1: TTrackBar;
+    TrackBar2: TTrackBar;
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  SettingsForm: TFormSettings;
+
+implementation
+
+{$R *.lfm}
+
+end.
+

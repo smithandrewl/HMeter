@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 1132
+  Left = 747
   Height = 610
-  Top = 137
+  Top = 70
   Width = 394
   AlphaBlend = True
   AlphaBlendValue = 225
@@ -5864,6 +5864,10 @@ object FormMain: TFormMain
     object SysTrayExitMenuItem: TMenuItem
       Caption = 'Exit'
       OnClick = SysTrayExitMenuItemClick
+    end
+    object SysTraySettingsMenuItem: TMenuItem
+      Caption = 'New Item2'
+      OnClick = SysTraySettingsMenuItemClick
     end
   end
   object AppPopupMenu: TPopupMenu
