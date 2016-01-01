@@ -195,13 +195,13 @@ begin
     end;
 
     case Info.TurboPageState of
-      '0': Info.TurboPageState := MsgOn;
-      '1': Info.TurboPageState := MsgOff;
+      '1':     Info.TurboPageState := MsgOn;
+      '0':     Info.TurboPageState := MsgOff;
     end;
 
     case Info.Throttled of
-      '0': Info.Throttled := MsgYes;
-      '1': Info.Throttled := MsgNo;
+      '2':     Info.Throttled := MsgYes;
+      '1':     Info.Throttled := MsgNo;
     end;
   finally
     DataStream.Free;
