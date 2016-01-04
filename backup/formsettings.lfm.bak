@@ -1,14 +1,15 @@
 object FormSettings: TFormSettings
-  Left = 498
+  Left = 478
   Height = 251
-  Top = 228
+  Top = 472
   Width = 320
   Caption = 'Settings'
   ClientHeight = 251
   ClientWidth = 320
+  OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '1.4.4.0'
-  object BitBtn1: TBitBtn
+  object BtnCancel: TBitBtn
     Left = 160
     Height = 30
     Top = 216
@@ -19,7 +20,7 @@ object FormSettings: TFormSettings
     ModalResult = 2
     TabOrder = 0
   end
-  object BitBtn2: TBitBtn
+  object BtnOk: TBitBtn
     Left = 240
     Height = 30
     Top = 216
@@ -30,19 +31,19 @@ object FormSettings: TFormSettings
     ModalResult = 1
     TabOrder = 1
   end
-  object PageControl1: TPageControl
+  object pagTabs: TPageControl
     Left = 8
     Height = 200
     Top = 8
     Width = 304
-    ActivePage = TabSheet2
-    TabIndex = 1
+    ActivePage = tabAppearance
+    TabIndex = 0
     TabOrder = 2
-    object TabSheet1: TTabSheet
+    object tabAppearance: TTabSheet
       Caption = 'Appearance'
       ClientHeight = 170
       ClientWidth = 300
-      object Label1: TLabel
+      object lblTransparency: TLabel
         Left = 8
         Height = 36
         Top = 8
@@ -51,22 +52,23 @@ object FormSettings: TFormSettings
         Caption = 'Transparency:'
         ParentColor = False
       end
-      object TrackBar1: TTrackBar
+      object trkTransparency: TTrackBar
         Left = 96
         Height = 36
         Top = 8
         Width = 128
         Max = 255
         Min = 10
+        OnChange = trkTransparencyChange
         Position = 10
         TabOrder = 0
       end
     end
-    object TabSheet2: TTabSheet
+    object tabOther: TTabSheet
       Caption = 'Other'
       ClientHeight = 170
       ClientWidth = 300
-      object Label2: TLabel
+      object lblRefreshInterval: TLabel
         Left = 8
         Height = 36
         Top = 6
@@ -76,7 +78,7 @@ object FormSettings: TFormSettings
         Caption = 'Refresh Interval (Sec): '
         ParentColor = False
       end
-      object TrackBar2: TTrackBar
+      object trkRefreshInterval: TTrackBar
         Left = 136
         Height = 36
         Top = 6
@@ -89,5 +91,12 @@ object FormSettings: TFormSettings
         TabOrder = 0
       end
     end
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniFileName = 'session.ini'
+    IniSection = 'ui'
+    left = 48
+    top = 216
   end
 end

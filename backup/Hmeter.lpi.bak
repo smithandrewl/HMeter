@@ -27,25 +27,28 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="6">
+    <RequiredPackages Count="7">
       <Item1>
-        <PackageName Value="LazControls"/>
+        <PackageName Value="IDEIntf"/>
       </Item1>
       <Item2>
-        <PackageName Value="RunTimeTypeInfoControls"/>
+        <PackageName Value="LazControls"/>
       </Item2>
       <Item3>
-        <PackageName Value="SQLDBLaz"/>
+        <PackageName Value="RunTimeTypeInfoControls"/>
       </Item3>
       <Item4>
-        <PackageName Value="TurboPowerIPro"/>
+        <PackageName Value="SQLDBLaz"/>
       </Item4>
       <Item5>
-        <PackageName Value="TAChartLazarusPkg"/>
+        <PackageName Value="TurboPowerIPro"/>
       </Item5>
       <Item6>
-        <PackageName Value="LCL"/>
+        <PackageName Value="TAChartLazarusPkg"/>
       </Item6>
+      <Item7>
+        <PackageName Value="LCL"/>
+      </Item7>
     </RequiredPackages>
     <Units Count="4">
       <Unit0>

@@ -6,26 +6,30 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
-  StdCtrls, Buttons;
+  StdCtrls, Buttons, IniPropStorage;
 
 type
 
   { TFormSettings }
 
   TFormSettings = class(TForm)
-    BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
-    Label1: TLabel;
-    Label2: TLabel;
-    PageControl1: TPageControl;
-    TabSheet1: TTabSheet;
-    TabSheet2: TTabSheet;
-    TrackBar1: TTrackBar;
-    TrackBar2: TTrackBar;
+    BtnCancel: TBitBtn;
+    BtnOk: TBitBtn;
+    IniPropStorage1: TIniPropStorage;
+    lblTransparency: TLabel;
+    lblRefreshInterval: TLabel;
+    pagTabs: TPageControl;
+    tabAppearance: TTabSheet;
+    tabOther: TTabSheet;
+    trkTransparency: TTrackBar;
+    trkRefreshInterval: TTrackBar;
+    procedure FormCreate(Sender: TObject);
+    procedure trkTransparencyChange(Sender: TObject);
   private
     { private declarations }
   public
     { public declarations }
+
   end;
 
 var
@@ -34,6 +38,19 @@ var
 implementation
 
 {$R *.lfm}
+
+{ TFormSettings }
+
+procedure TFormSettings.FormCreate(Sender: TObject);
+begin
+  trkTransparency.Position := inipropstorage1.ReadInteger('FormMain_AlphaBlendValue', 255);
+end;
+
+procedure TFormSettings.trkTransparencyChange(Sender: TObject);
+begin
+  inipropstorage1.WriteInteger('FormMain_AlphaBlendValue', trkTransparency.Position);
+  inipropstorage1.Save;
+end;
 
 end.
 

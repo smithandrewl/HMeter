@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 747
+  Left = 634
   Height = 610
-  Top = 70
+  Top = 257
   Width = 394
   AlphaBlend = True
   AlphaBlendValue = 225
@@ -5866,7 +5866,7 @@ object FormMain: TFormMain
       OnClick = SysTrayExitMenuItemClick
     end
     object SysTraySettingsMenuItem: TMenuItem
-      Caption = 'New Item2'
+      Caption = 'Settings'
       OnClick = SysTraySettingsMenuItemClick
     end
   end
@@ -5886,5 +5886,12 @@ object FormMain: TFormMain
     OnTimer = Timer1Timer
     left = 296
     top = 168
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniFileName = 'session.ini'
+    IniSection = 'ui'
+    left = 280
+    top = 301
   end
 end

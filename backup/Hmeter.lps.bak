@@ -3,14 +3,13 @@
   <ProjectSession>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="6">
+    <Units Count="7">
       <Unit0>
         <Filename Value="Hmeter.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="37" Y="17"/>
-        <UsageCount Value="51"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="53"/>
       </Unit0>
       <Unit1>
         <Filename Value="mainform.pas"/>
@@ -19,9 +18,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainForm"/>
-        <TopLine Value="171"/>
-        <CursorPos X="21" Y="183"/>
-        <UsageCount Value="51"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="211"/>
+        <CursorPos X="31" Y="121"/>
+        <UsageCount Value="53"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -29,12 +29,10 @@
         <Filename Value="hnetinfo.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HNetInfo"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="182"/>
-        <CursorPos X="11" Y="200"/>
-        <UsageCount Value="41"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="180"/>
+        <CursorPos X="9" Y="200"/>
+        <UsageCount Value="43"/>
       </Unit2>
       <Unit3>
         <Filename Value="formsettings.pas"/>
@@ -43,9 +41,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormSettings"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos Y="14"/>
-        <UsageCount Value="21"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="15" Y="38"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="/usr/lib/lazarus/lcl/extctrls.pp"/>
@@ -63,8 +63,16 @@
         <CursorPos X="3" Y="42"/>
         <UsageCount Value="9"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="formsettings.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="61"/>
+        <CursorPos X="19" Y="8"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit6>
     </Units>
-    <JumpHistory Count="8" HistoryIndex="7">
+    <JumpHistory Count="15" HistoryIndex="14">
       <Position1>
         <Filename Value="mainform.pas"/>
         <Caret Line="121" Column="5" TopLine="109"/>
@@ -90,13 +98,41 @@
         <Caret Line="173" TopLine="157"/>
       </Position6>
       <Position7>
-        <Filename Value="Hmeter.lpr"/>
-        <Caret Line="10" Column="72"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="183" Column="21" TopLine="171"/>
       </Position7>
       <Position8>
-        <Filename Value="hnetinfo.pas"/>
-        <Caret Line="198" Column="16" TopLine="179"/>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="184" Column="21" TopLine="172"/>
       </Position8>
+      <Position9>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="183" Column="21" TopLine="171"/>
+      </Position9>
+      <Position10>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="184" Column="21" TopLine="172"/>
+      </Position10>
+      <Position11>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="183" Column="21" TopLine="171"/>
+      </Position11>
+      <Position12>
+        <Filename Value="formsettings.pas"/>
+        <Caret Line="18" Column="29"/>
+      </Position12>
+      <Position13>
+        <Filename Value="formsettings.pas"/>
+        <Caret Line="43" Column="21" TopLine="15"/>
+      </Position13>
+      <Position14>
+        <Filename Value="formsettings.pas"/>
+        <Caret Line="30" Column="5" TopLine="13"/>
+      </Position14>
+      <Position15>
+        <Filename Value="formsettings.pas"/>
+        <Caret Line="37" TopLine="17"/>
+      </Position15>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

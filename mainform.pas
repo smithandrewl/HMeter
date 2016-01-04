@@ -12,10 +12,9 @@ unit mainForm;
 interface
 
 uses
-  Classes, SysUtils, FileUtil,TAGraph, TASeries,
-  TALegendPanel, RTTICtrls, Forms, Controls, Graphics,
-  Dialogs, ExtCtrls, StdCtrls, Menus, LResources, HNetInfo,
-  FormSettings;
+  Classes, SysUtils, FileUtil, TAGraph, TASeries, TALegendPanel, RTTICtrls,
+  IDEWindowIntf, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Menus,
+  LResources, XMLPropStorage, IniPropStorage, HNetInfo, FormSettings;
 
 type
 
@@ -27,6 +26,7 @@ type
     ChartLineSeries1:              TLineSeries;
     ChartLegendPanel1:             TChartLegendPanel;
     grpDownloadLimit:              TGroupBox;
+    IniPropStorage1: TIniPropStorage;
     lblReceiveSignalStrength:      TLabel;
     lblReceiveSignalStrengthValue: TLabel;
     lblRefillAmountValue:          TLabel;
@@ -195,6 +195,7 @@ procedure TFormMain.UpdateUI(Info: THNetInfo);
 var
   DataLeft: integer;
 begin
+  alphablendvalue := inipropstorage1.ReadInteger('FormMain_AlphaBlendValue', 255);
   lblModemTypeValue.Caption             := Info.ModemType;
   lblUptimeValue.Caption                := Info.Uptime;
   lblTurboPageStateValue.Caption        := Info.TurboPageState;

@@ -1,11 +1,12 @@
 object FormSettings: TFormSettings
-  Left = 498
+  Left = 478
   Height = 251
-  Top = 228
+  Top = 472
   Width = 320
   Caption = 'Settings'
   ClientHeight = 251
   ClientWidth = 320
+  OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '1.4.4.0'
   object BtnCancel: TBitBtn
@@ -58,6 +59,7 @@ object FormSettings: TFormSettings
         Width = 128
         Max = 255
         Min = 10
+        OnChange = trkTransparencyChange
         Position = 10
         TabOrder = 0
       end
@@ -89,5 +91,12 @@ object FormSettings: TFormSettings
         TabOrder = 0
       end
     end
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniFileName = 'session.ini'
+    IniSection = 'ui'
+    left = 48
+    top = 216
   end
 end
