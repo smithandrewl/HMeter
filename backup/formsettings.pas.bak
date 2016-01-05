@@ -15,7 +15,9 @@ type
   TFormSettings = class(TForm)
     BtnCancel: TBitBtn;
     BtnOk: TBitBtn;
+    ColorButton1: TColorButton;
     IniPropStorage1: TIniPropStorage;
+    Label1: TLabel;
     lblTransparency: TLabel;
     lblRefreshInterval: TLabel;
     pagTabs: TPageControl;
@@ -49,7 +51,6 @@ end;
 procedure TFormSettings.trkTransparencyChange(Sender: TObject);
 begin
   inipropstorage1.WriteInteger('FormMain_AlphaBlendValue', trkTransparency.Position);
-  inipropstorage1.Save;
 end;
 
 end.

@@ -15,7 +15,9 @@ type
   TFormSettings = class(TForm)
     BtnCancel: TBitBtn;
     BtnOk: TBitBtn;
+    ColorButton1: TColorButton;
     IniPropStorage1: TIniPropStorage;
+    Label1: TLabel;
     lblTransparency: TLabel;
     lblRefreshInterval: TLabel;
     pagTabs: TPageControl;
