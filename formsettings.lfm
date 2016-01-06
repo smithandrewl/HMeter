@@ -79,6 +79,7 @@ object FormSettings: TFormSettings
         BorderWidth = 2
         ButtonColorSize = 16
         ButtonColor = clMaroon
+        OnColorChanged = ColorButton1ColorChanged
       end
     end
     object tabOther: TTabSheet

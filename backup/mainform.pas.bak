@@ -196,6 +196,7 @@ var
   DataLeft: integer;
 begin
   alphablendvalue := inipropstorage1.ReadInteger('FormMain_AlphaBlendValue', 255);
+  chartLineSeries1.SeriesColor:= inipropstorage1.ReadInteger('lineseriescolor', 0);
   lblModemTypeValue.Caption             := Info.ModemType;
   lblUptimeValue.Caption                := Info.Uptime;
   lblTurboPageStateValue.Caption        := Info.TurboPageState;

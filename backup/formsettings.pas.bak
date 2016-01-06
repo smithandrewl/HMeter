@@ -25,6 +25,7 @@ type
     tabOther: TTabSheet;
     trkTransparency: TTrackBar;
     trkRefreshInterval: TTrackBar;
+    procedure ColorButton1ColorChanged(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure trkTransparencyChange(Sender: TObject);
   private
@@ -46,6 +47,12 @@ implementation
 procedure TFormSettings.FormCreate(Sender: TObject);
 begin
   trkTransparency.Position := inipropstorage1.ReadInteger('FormMain_AlphaBlendValue', 255);
+  colorbutton1.ButtonColor:= inipropstorage1.ReadInteger('serieslinecolor', 0);
+end;
+
+procedure TFormSettings.ColorButton1ColorChanged(Sender: TObject);
+begin
+  inipropstorage1.WriteInteger('lineseriescolor', colorbutton1.ButtonColor);
 end;
 
 procedure TFormSettings.trkTransparencyChange(Sender: TObject);

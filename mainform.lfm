@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 1503
+  Left = 1014
   Height = 610
-  Top = 42
+  Top = 171
   Width = 394
   AlphaBlend = True
   AlphaBlendValue = 225
@@ -16,7 +16,7 @@ object FormMain: TFormMain
   OnMouseMove = FormMouseMove
   OnMouseUp = FormMouseUp
   PopupMenu = AppPopupMenu
-  SessionProperties = 'Color;Chart.BackColor;Chart.Color;ChartLineSeries1.SeriesColor'
+  SessionProperties = 'Chart.BackColor;Chart.Color;Color'
   LCLVersion = '1.4.4.0'
   object Chart: TChart
     Left = 8

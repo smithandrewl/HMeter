@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 1045
+  Left = 1014
   Height = 610
-  Top = 59
+  Top = 171
   Width = 394
   AlphaBlend = True
   AlphaBlendValue = 225
