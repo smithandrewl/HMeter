@@ -1,7 +1,7 @@
 object FormMain: TFormMain
-  Left = 1014
+  Left = 1481
   Height = 610
-  Top = 171
+  Top = 173
   Width = 394
   AlphaBlend = True
   AlphaBlendValue = 225
@@ -135,8 +135,8 @@ object FormMain: TFormMain
     Top = 224
     Width = 376
     Caption = 'Download Limit: '
-    ClientHeight = 350
-    ClientWidth = 374
+    ClientHeight = 349
+    ClientWidth = 372
     Font.Color = 18175
     Font.Height = -19
     ParentFont = False
@@ -5865,13 +5865,13 @@ object FormMain: TFormMain
   object SysTrayPopupMenu: TPopupMenu
     left = 296
     top = 136
-    object SysTrayExitMenuItem: TMenuItem
-      Caption = 'Exit'
-      OnClick = SysTrayExitMenuItemClick
-    end
     object SysTraySettingsMenuItem: TMenuItem
       Caption = 'Settings'
       OnClick = SysTraySettingsMenuItemClick
+    end
+    object SysTrayExitMenuItem: TMenuItem
+      Caption = 'Exit'
+      OnClick = SysTrayExitMenuItemClick
     end
   end
   object AppPopupMenu: TPopupMenu

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
-  StdCtrls, Buttons, IniPropStorage;
+  StdCtrls, Buttons, IniPropStorage, ExtCtrls, MaskEdit;
 
 type
 
@@ -18,8 +18,10 @@ type
     ColorButton1: TColorButton;
     IniPropStorage1: TIniPropStorage;
     Label1: TLabel;
+    Label2: TLabel;
     lblTransparency: TLabel;
     lblRefreshInterval: TLabel;
+    MaskEdit1: TMaskEdit;
     pagTabs: TPageControl;
     tabAppearance: TTabSheet;
     tabOther: TTabSheet;

@@ -14,7 +14,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, TAGraph, TASeries, TALegendPanel, RTTICtrls,
   IDEWindowIntf, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Menus,
-  LResources, XMLPropStorage, IniPropStorage, HNetInfo, FormSettings;
+  LResources, XMLPropStorage, IniPropStorage, ComCtrls, HNetInfo, FormSettings;
 
 type
 
