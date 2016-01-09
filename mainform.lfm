@@ -16,7 +16,7 @@ object FormMain: TFormMain
   OnMouseMove = FormMouseMove
   OnMouseUp = FormMouseUp
   PopupMenu = AppPopupMenu
-  SessionProperties = 'Chart.BackColor;Chart.Color;Color'
+  SessionProperties = 'Chart.BackColor;Chart.Color'
   LCLVersion = '1.4.4.0'
   object Chart: TChart
     Left = 8
@@ -137,8 +137,10 @@ object FormMain: TFormMain
     Caption = 'Download Limit: '
     ClientHeight = 349
     ClientWidth = 372
+    Color = clBlack
     Font.Color = 18175
     Font.Height = -19
+    ParentColor = False
     ParentFont = False
     TabOrder = 2
     OnClick = grpDownloadLimitClick
