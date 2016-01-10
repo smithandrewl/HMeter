@@ -5889,6 +5889,7 @@ object FormMain: TFormMain
     end
   end
   object Timer1: TTimer
+    Interval = 500
     OnTimer = Timer1Timer
     left = 296
     top = 168

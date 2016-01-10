@@ -1,7 +1,7 @@
 object FormSettings: TFormSettings
-  Left = 486
+  Left = 778
   Height = 396
-  Top = 161
+  Top = 180
   Width = 451
   Caption = 'Settings'
   ClientHeight = 396
@@ -17,6 +17,7 @@ object FormSettings: TFormSettings
     DefaultCaption = True
     Kind = bkCancel
     ModalResult = 2
+    OnClick = BtnCancelClick
     TabOrder = 0
   end
   object BtnOk: TBitBtn
@@ -27,6 +28,7 @@ object FormSettings: TFormSettings
     DefaultCaption = True
     Kind = bkOK
     ModalResult = 1
+    OnClick = BtnOkClick
     TabOrder = 1
   end
   object pagTabs: TPageControl
@@ -67,7 +69,6 @@ object FormSettings: TFormSettings
           ButtonColorSize = 16
           ButtonColor = clMaroon
           OnColorChanged = cbFormBackgroundColorChanged
-          OnChangeBounds = cbFormBackgroundChangeBounds
         end
         object trkTransparency: TTrackBar
           Left = 136

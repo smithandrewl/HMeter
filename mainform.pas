@@ -198,7 +198,6 @@ begin
   alphablendvalue := inipropstorage1.ReadInteger('FormMain_AlphaBlendValue', 255);
   chartLineSeries1.SeriesColor:= inipropstorage1.ReadInteger('lineseriescolor', 0);
 
-
   color := inipropstorage1.ReadInteger('formBackgroundColor', 0);
 
   lblModemTypeValue.Caption             := Info.ModemType;

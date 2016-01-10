@@ -33,13 +33,17 @@ type
     tabOther: TTabSheet;
     trkRefreshInterval: TTrackBar;
     trkTransparency: TTrackBar;
-    procedure cbFormBackgroundChangeBounds(Sender: TObject);
+    procedure BtnCancelClick(Sender: TObject);
+    procedure BtnOkClick(Sender: TObject);
     procedure cbFormBackgroundColorChanged(Sender: TObject);
     procedure ColorButton1ColorChanged(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure trkTransparencyChange(Sender: TObject);
   private
     { private declarations }
+    prevFormBackground: TColor;
+    prevTransparency:   Integer;
+    prevLineColor:      TColor;
   public
     { public declarations }
 
@@ -55,15 +59,40 @@ implementation
 { TFormSettings }
 
 procedure TFormSettings.FormCreate(Sender: TObject);
+var
+  transparency:        Integer;
+  lineColor:           TColor;
+  formBackgroundColor: TColor;
 begin
-  trkTransparency.Position := inipropstorage1.ReadInteger('FormMain_AlphaBlendValue', 255);
-  colorbutton1.ButtonColor:= inipropstorage1.ReadInteger('lineseriescolor', 0);
-  cbFormBackground.ButtonColor := inipropstorage1.ReadInteger('formBackgroundColor', 0);
+  transparency        := inipropstorage1.ReadInteger('FormMain_AlphaBlendValue', 255);
+  lineColor           := inipropstorage1.ReadInteger('lineseriescolor', 0);
+  formBackgroundColor := inipropstorage1.ReadInteger('formBackgroundColor', 0);
+
+  trkTransparency.Position     := transparency;
+  colorbutton1.ButtonColor     := lineColor;
+  cbFormBackground.ButtonColor := formBackgroundColor;
+
+  prevTransparency   := transparency;
+  prevLineColor      := lineColor;
+  prevFormBackground := formBackgroundColor;
 end;
 
-procedure TFormSettings.cbFormBackgroundChangeBounds(Sender: TObject);
+procedure TFormSettings.BtnOkClick(Sender: TObject);
 begin
+     visible := false;
+end;
 
+procedure TFormSettings.BtnCancelClick(Sender: TObject);
+begin
+  inipropstorage1.WriteInteger('formBackgroundColor', prevFormBackground);
+  inipropstorage1.WriteInteger('lineseriescolor', prevLineColor);
+  inipropstorage1.WriteInteger('FormMain_AlphaBlendValue', prevTransparency);
+
+  visible := false;
+
+  cbFormBackground.ButtonColor := prevFormBackground;
+  colorButton1.ButtonColor     := prevLineColor;
+  trkTransparency.Position     := prevTransparency;
 end;
 
 procedure TFormSettings.cbFormBackgroundColorChanged(Sender: TObject);
