@@ -1,7 +1,7 @@
 object FormSettings: TFormSettings
-  Left = 778
+  Left = 1200
   Height = 396
-  Top = 180
+  Top = 157
   Width = 451
   Caption = 'Settings'
   ClientHeight = 396
@@ -36,8 +36,8 @@ object FormSettings: TFormSettings
     Height = 344
     Top = 8
     Width = 436
-    ActivePage = tabAppearance
-    TabIndex = 0
+    ActivePage = tabOther
+    TabIndex = 1
     TabOrder = 2
     object tabAppearance: TTabSheet
       Caption = 'Appearance'

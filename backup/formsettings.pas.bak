@@ -35,7 +35,6 @@ type
     trkTransparency: TTrackBar;
     procedure BtnCancelClick(Sender: TObject);
     procedure BtnOkClick(Sender: TObject);
-    procedure cbFormBackgroundChangeBounds(Sender: TObject);
     procedure cbFormBackgroundColorChanged(Sender: TObject);
     procedure ColorButton1ColorChanged(Sender: TObject);
     procedure FormCreate(Sender: TObject);

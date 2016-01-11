@@ -1,0 +1,39 @@
+unit Settings;
+
+{$mode objfpc}{$H+}
+
+interface
+
+
+uses
+  Classes, SysUtils, Graphics;
+
+type
+TSettings = class(TObject)
+private
+  FormBackground:   TColor;
+  FormTransparency: Integer;
+  ChartLineColor:   TColor;
+  RefreshInterval:  Integer;
+  ServerIp:         String;
+
+public
+
+  constructor Create;
+  destructor Destroy; override;
+end;
+
+implementation
+
+constructor TSettings.Create;
+begin
+
+end;
+
+destructor TSettings.Destroy;
+begin
+
+end;
+
+end.
+
