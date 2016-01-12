@@ -1,7 +1,7 @@
 object FormSettings: TFormSettings
-  Left = 1200
+  Left = 1439
   Height = 396
-  Top = 157
+  Top = 33
   Width = 451
   Caption = 'Settings'
   ClientHeight = 396
@@ -36,8 +36,8 @@ object FormSettings: TFormSettings
     Height = 344
     Top = 8
     Width = 436
-    ActivePage = tabOther
-    TabIndex = 1
+    ActivePage = tabAppearance
+    TabIndex = 0
     TabOrder = 2
     object tabAppearance: TTabSheet
       Caption = 'Appearance'
@@ -99,15 +99,15 @@ object FormSettings: TFormSettings
         ClientHeight = 83
         ClientWidth = 396
         TabOrder = 1
-        object lblFormBackground1: TLabel
+        object lblLineColor: TLabel
           Left = 8
           Height = 20
-          Top = 13
+          Top = 5
           Width = 69
           Caption = 'Line Color:'
           ParentColor = False
         end
-        object colorbutton1: TColorButton
+        object cbLineColor: TColorButton
           Left = 136
           Height = 25
           Top = 0
@@ -116,6 +116,23 @@ object FormSettings: TFormSettings
           ButtonColorSize = 16
           ButtonColor = clMaroon
           OnColorChanged = ColorButton1ColorChanged
+        end
+        object lblChartBackground: TLabel
+          Left = 8
+          Height = 20
+          Top = 45
+          Width = 118
+          Caption = 'Background Color:'
+          ParentColor = False
+        end
+        object cbBackgroundColor: TColorButton
+          Left = 136
+          Height = 25
+          Top = 40
+          Width = 75
+          BorderWidth = 2
+          ButtonColorSize = 16
+          ButtonColor = clMaroon
         end
       end
     end

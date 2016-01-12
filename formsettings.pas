@@ -17,14 +17,16 @@ type
     BtnCancel: TBitBtn;
     BtnOk: TBitBtn;
     cbFormBackground: TColorButton;
-    colorbutton1: TColorButton;
+    cbLineColor: TColorButton;
+    cbBackgroundColor: TColorButton;
     gbForm: TGroupBox;
     gbChart: TGroupBox;
     IniPropStorage1: TIniPropStorage;
     Label1: TLabel;
     Label2: TLabel;
     lblFormBackground: TLabel;
-    lblFormBackground1: TLabel;
+    lblLineColor: TLabel;
+    lblChartBackground: TLabel;
     lblRefreshInterval: TLabel;
     lblTransparency: TLabel;
     MaskEdit1: TMaskEdit;
@@ -69,7 +71,7 @@ begin
   formBackgroundColor := inipropstorage1.ReadInteger('formBackgroundColor', 0);
 
   trkTransparency.Position     := transparency;
-  colorbutton1.ButtonColor     := lineColor;
+  cbLineColor.ButtonColor     := lineColor;
   cbFormBackground.ButtonColor := formBackgroundColor;
 
   prevTransparency   := transparency;
@@ -91,7 +93,7 @@ begin
   visible := false;
 
   cbFormBackground.ButtonColor := prevFormBackground;
-  colorButton1.ButtonColor     := prevLineColor;
+  cbLineColor.ButtonColor     := prevLineColor;
   trkTransparency.Position     := prevTransparency;
 end;
 
@@ -102,7 +104,7 @@ end;
 
 procedure TFormSettings.ColorButton1ColorChanged(Sender: TObject);
 begin
-  inipropstorage1.WriteInteger('lineseriescolor', colorbutton1.ButtonColor);
+  inipropstorage1.WriteInteger('lineseriescolor', cbLineColor.ButtonColor);
 end;
 
 

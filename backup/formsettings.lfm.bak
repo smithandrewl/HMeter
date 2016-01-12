@@ -36,8 +36,8 @@ object FormSettings: TFormSettings
     Height = 344
     Top = 8
     Width = 436
-    ActivePage = tabAppearance
-    TabIndex = 0
+    ActivePage = tabOther
+    TabIndex = 1
     TabOrder = 2
     object tabAppearance: TTabSheet
       Caption = 'Appearance'

@@ -7,10 +7,9 @@
       <Unit0>
         <Filename Value="Hmeter.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="35" Y="11"/>
         <UsageCount Value="61"/>
-        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="mainform.pas"/>
@@ -19,6 +18,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="mainForm"/>
+        <TopLine Value="216"/>
         <CursorPos X="62" Y="209"/>
         <UsageCount Value="61"/>
         <Loaded Value="True"/>
@@ -28,10 +28,11 @@
         <Filename Value="hnetinfo.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="HNetInfo"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="180"/>
-        <CursorPos X="9" Y="200"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="71"/>
+        <CursorPos X="9" Y="95"/>
         <UsageCount Value="51"/>
+        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="formsettings.pas"/>
@@ -41,7 +42,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormSettings"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="31" Y="46"/>
+        <TopLine Value="83"/>
+        <CursorPos X="24" Y="17"/>
         <UsageCount Value="31"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -76,12 +78,12 @@
         <UnitName Value="Settings"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="30" Y="9"/>
+        <CursorPos X="5" Y="11"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit7>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="formsettings.pas"/>
         <Caret Line="56" Column="74" TopLine="35"/>
@@ -179,29 +181,25 @@
         <Caret Line="81" Column="45" TopLine="66"/>
       </Position24>
       <Position25>
-        <Filename Value="Hmeter.lpr"/>
-        <Caret Line="17" Column="37"/>
+        <Filename Value="settings.pas"/>
+        <Caret Line="6" Column="5"/>
       </Position25>
       <Position26>
         <Filename Value="settings.pas"/>
-        <Caret Line="6" Column="5"/>
+        <Caret Line="10"/>
       </Position26>
       <Position27>
         <Filename Value="settings.pas"/>
-        <Caret Line="10"/>
+        <Caret Line="25" Column="5"/>
       </Position27>
       <Position28>
         <Filename Value="settings.pas"/>
-        <Caret Line="25" Column="5"/>
+        <Caret Line="23" Column="23"/>
       </Position28>
       <Position29>
         <Filename Value="settings.pas"/>
-        <Caret Line="23" Column="23"/>
-      </Position29>
-      <Position30>
-        <Filename Value="settings.pas"/>
         <Caret Line="13" Column="8" TopLine="2"/>
-      </Position30>
+      </Position29>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
