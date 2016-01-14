@@ -14,13 +14,15 @@ interface
 uses
   Classes, SysUtils, FileUtil, TAGraph, TASeries, TALegendPanel, RTTICtrls,
   IDEWindowIntf, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Menus,
-  LResources, XMLPropStorage, IniPropStorage, ComCtrls, HNetInfo, FormSettings;
+  LResources, XMLPropStorage, IniPropStorage, ComCtrls, Buttons, HNetInfo,
+  FormSettings;
 
 type
 
   { TFormMain }
 
   TFormMain = class(TForm)
+    bvlDrag: TBevel;
     btnResetGraph: TButton;
     Chart:                         TChart;
     ChartLineSeries1:              TLineSeries;
@@ -46,6 +48,7 @@ type
     lblUptime:                     TLabel;
     lblTurboPageState:             TLabel;
     AppHideMenuItem:               TMenuItem;
+    lblDrag: TStaticText;
     SysTraySettingsMenuItem: TMenuItem;
     StatusImageBarred:             TImage;
     StatusImageHigh:               TImage;
