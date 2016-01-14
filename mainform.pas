@@ -208,10 +208,10 @@ begin
   lblUptimeValue.Caption                := Info.Uptime;
   lblTurboPageStateValue.Caption        := Info.TurboPageState;
   lblThrottledValue.Caption             := Info.Throttled;
-  lblTimeUntilRefillValue.Caption       := Info.TimeUntilRefill;
-  lblDailyLimitValue.Caption            := Info.DailyLimit;
-  lblRefillAmountValue.Caption          := Info.RefillAmount;
-  lblMegabytesLeftValue.Caption         := Info.MegabytesLeft;
+  lblTimeUntilRefillValue.Caption       := Info.TimeUntilRefill + ' Minutes';
+  lblDailyLimitValue.Caption            := Info.DailyLimit      + ' Megabytes';
+  lblRefillAmountValue.Caption          := Info.RefillAmount    + ' Megabytes';
+  lblMegabytesLeftValue.Caption         := Info.MegabytesLeft   + ' Megabytes';
   lblReceiveSignalStrengthValue.Caption := Info.ReceiveSignalStrength;
 
   if Info.ReceiveSignalStrength <> '???' then

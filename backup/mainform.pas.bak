@@ -208,10 +208,10 @@ begin
   lblUptimeValue.Caption                := Info.Uptime;
   lblTurboPageStateValue.Caption        := Info.TurboPageState;
   lblThrottledValue.Caption             := Info.Throttled;
-  lblTimeUntilRefillValue.Caption       := Info.TimeUntilRefill;
-  lblDailyLimitValue.Caption            := Info.DailyLimit;
-  lblRefillAmountValue.Caption          := Info.RefillAmount;
-  lblMegabytesLeftValue.Caption         := Info.MegabytesLeft;
+  lblTimeUntilRefillValue.Caption       := Info.TimeUntilRefill + ' Minutes';
+  lblDailyLimitValue.Caption            := Info.DailyLimit    + ' Megabytes';
+  lblRefillAmountValue.Caption          := Info.RefillAmount  + ' Megabytes';
+  lblMegabytesLeftValue.Caption         := Info.MegabytesLeft + ' Megabytes';
   lblReceiveSignalStrengthValue.Caption := Info.ReceiveSignalStrength;
 
   if Info.ReceiveSignalStrength <> '???' then
@@ -249,14 +249,17 @@ end;
 procedure TFormMain.UpdateStatusImages(Barred: Boolean; Low: Boolean; High: Boolean);
 begin
 
+  StatusImageBarred.Visible  := Barred;
+  StatusImageLow.Visible     := Low;
+  StatusImageHigh.Visible    := High;
+  StatusImageUnknown.Visible := false;
+
   if not Barred and not Low and not High then
   begin
     StatusImageUnknown.Visible := true;
   end;
 
-  StatusImageBarred.Visible := Barred;
-  StatusImageLow.Visible    := Low;
-  StatusImageHigh.Visible   := High;
+
 
 end;
 
