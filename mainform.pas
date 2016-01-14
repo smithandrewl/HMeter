@@ -49,6 +49,7 @@ type
     lblTurboPageState:             TLabel;
     AppHideMenuItem:               TMenuItem;
     lblDrag: TStaticText;
+    StatusImageUnknown: TImage;
     SysTraySettingsMenuItem: TMenuItem;
     StatusImageBarred:             TImage;
     StatusImageHigh:               TImage;
@@ -247,9 +248,19 @@ end;
 
 procedure TFormMain.UpdateStatusImages(Barred: Boolean; Low: Boolean; High: Boolean);
 begin
-  StatusImageBarred.Visible := Barred;
-  StatusImageLow.Visible    := Low;
-  StatusImageHigh.Visible   := High;
+
+  StatusImageBarred.Visible  := Barred;
+  StatusImageLow.Visible     := Low;
+  StatusImageHigh.Visible    := High;
+  StatusImageUnknown.Visible := false;
+
+  if not Barred and not Low and not High then
+  begin
+    StatusImageUnknown.Visible := true;
+  end;
+
+
+
 end;
 
 end.

@@ -9,7 +9,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="35" Y="11"/>
-        <UsageCount Value="64"/>
+        <UsageCount Value="65"/>
       </Unit0>
       <Unit1>
         <Filename Value="mainform.pas"/>
@@ -20,9 +20,9 @@
         <UnitName Value="mainForm"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="208"/>
-        <CursorPos X="10" Y="219"/>
-        <UsageCount Value="64"/>
+        <TopLine Value="232"/>
+        <CursorPos X="39" Y="254"/>
+        <UsageCount Value="65"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -32,7 +32,7 @@
         <UnitName Value="HNetInfo"/>
         <TopLine Value="40"/>
         <CursorPos Y="71"/>
-        <UsageCount Value="54"/>
+        <UsageCount Value="55"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -45,7 +45,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="58"/>
         <CursorPos X="24" Y="17"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -54,7 +54,7 @@
         <UnitName Value="Settings"/>
         <EditorIndex Value="2"/>
         <CursorPos X="5" Y="11"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -82,7 +82,7 @@
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit7>
     </Units>
-    <JumpHistory Count="15" HistoryIndex="14">
+    <JumpHistory Count="21" HistoryIndex="20">
       <Position1>
         <Filename Value="mainform.pas"/>
         <Caret Line="221" Column="10" TopLine="206"/>
@@ -143,6 +143,30 @@
         <Filename Value="mainform.pas"/>
         <Caret Line="148" TopLine="123"/>
       </Position15>
+      <Position16>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="219" Column="10" TopLine="208"/>
+      </Position16>
+      <Position17>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="216" Column="45" TopLine="207"/>
+      </Position17>
+      <Position18>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="217" Column="45" TopLine="208"/>
+      </Position18>
+      <Position19>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="216" Column="45" TopLine="207"/>
+      </Position19>
+      <Position20>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="217" Column="45" TopLine="208"/>
+      </Position20>
+      <Position21>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="216" Column="45" TopLine="207"/>
+      </Position21>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

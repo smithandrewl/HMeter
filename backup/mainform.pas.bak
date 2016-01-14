@@ -49,6 +49,7 @@ type
     lblTurboPageState:             TLabel;
     AppHideMenuItem:               TMenuItem;
     lblDrag: TStaticText;
+    StatusImageUnknown: TImage;
     SysTraySettingsMenuItem: TMenuItem;
     StatusImageBarred:             TImage;
     StatusImageHigh:               TImage;
@@ -215,7 +216,7 @@ begin
 
   if Info.ReceiveSignalStrength <> '???' then
   begin
-    if ChartLineSeries1.Count > 200 then
+    if ChartLineSeries1.Count > 100 then
     begin
         ChartLineSeries1.Delete(0);
     end;
@@ -247,9 +248,16 @@ end;
 
 procedure TFormMain.UpdateStatusImages(Barred: Boolean; Low: Boolean; High: Boolean);
 begin
+
+  if not Barred and not Low and not High then
+  begin
+    StatusImageUnknown.Visible := true;
+  end;
+
   StatusImageBarred.Visible := Barred;
   StatusImageLow.Visible    := Low;
   StatusImageHigh.Visible   := High;
+
 end;
 
 end.
