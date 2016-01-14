@@ -20,7 +20,8 @@
         <UnitName Value="mainForm"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="3" Y="11"/>
+        <TopLine Value="123"/>
+        <CursorPos X="6" Y="125"/>
         <UsageCount Value="64"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -81,7 +82,7 @@
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit7>
     </Units>
-    <JumpHistory Count="13" HistoryIndex="12">
+    <JumpHistory Count="14" HistoryIndex="13">
       <Position1>
         <Filename Value="mainform.pas"/>
         <Caret Line="221" Column="10" TopLine="206"/>
@@ -134,17 +135,10 @@
         <Filename Value="mainform.pas"/>
         <Caret Line="145" TopLine="135"/>
       </Position13>
+      <Position14>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="32" Column="43" TopLine="26"/>
+      </Position14>
     </JumpHistory>
   </ProjectSession>
-  <Debugging>
-    <BreakPoints Count="1">
-      <Item1>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="mainform.pas"/>
-        <Line Value="1"/>
-      </Item1>
-    </BreakPoints>
-  </Debugging>
 </CONFIG>

@@ -22,7 +22,7 @@ type
   { TFormMain }
 
   TFormMain = class(TForm)
-    Bevel1: TBevel;
+    bvlDrag: TBevel;
     btnResetGraph: TButton;
     Chart:                         TChart;
     ChartLineSeries1:              TLineSeries;
@@ -48,7 +48,7 @@ type
     lblUptime:                     TLabel;
     lblTurboPageState:             TLabel;
     AppHideMenuItem:               TMenuItem;
-    StaticText1: TStaticText;
+    lblDrag: TStaticText;
     SysTraySettingsMenuItem: TMenuItem;
     StatusImageBarred:             TImage;
     StatusImageHigh:               TImage;
