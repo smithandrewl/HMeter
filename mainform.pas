@@ -214,8 +214,14 @@ begin
   lblReceiveSignalStrengthValue.Caption := Info.ReceiveSignalStrength;
 
   if Info.ReceiveSignalStrength <> '???' then
-  ChartLineSeries1.add( StrToFloat(Info.ReceiveSignalStrength));
+  begin
+    if ChartLineSeries1.Count > 100 then
+    begin
+        ChartLineSeries1.Delete(0);
+    end;
 
+    ChartLineSeries1.add( StrToFloat(Info.ReceiveSignalStrength));
+  end;
   if Info.MegabytesLeft <> '???' then
   begin
     DataLeft := StrToInt(Info.MegabytesLeft);
