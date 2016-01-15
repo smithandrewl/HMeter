@@ -1,5 +1,5 @@
 object FormMain: TFormMain
-  Left = 1187
+  Left = 754
   Height = 610
   Top = 116
   Width = 411
@@ -31,6 +31,7 @@ object FormMain: TFormMain
       item
         Alignment = calBottom
         Marks.LabelFont.Color = clWhite
+        Marks.Style = smsNone
         Minors = <>
       end>
     BackColor = clMenu
